@@ -28,6 +28,7 @@ The Vite configuration automatically discovers all `page.css` files in view dire
 ```
 
 This generates output files like:
+
 - `dist/assets/styles/views/home.css`
 - `dist/assets/styles/views/about.css`
 
@@ -40,14 +41,14 @@ Create a new view stylesheet by adding a `page.css` file in the view directory:
 
 /* View-specific styles for home page */
 .home-hero {
-  background: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);
-  padding: 4rem 2rem;
+	background: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);
+	padding: 4rem 2rem;
 }
 
 .home-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
 }
 ```
 
@@ -93,18 +94,26 @@ The project uses configured path aliases:
    ========================================================================== */
 
 /* Hero Section */
-.home-hero { }
-.home-hero__title { }
-.home-hero__subtitle { }
+.home-hero {
+}
+.home-hero__title {
+}
+.home-hero__subtitle {
+}
 
 /* Features Section */
-.home-features { }
-.home-features__item { }
-.home-features__icon { }
+.home-features {
+}
+.home-features__item {
+}
+.home-features__icon {
+}
 
 /* Call to Action */
-.home-cta { }
-.home-cta__button { }
+.home-cta {
+}
+.home-cta__button {
+}
 ```
 
 ## Integration with HTML
@@ -114,16 +123,16 @@ Reference the built CSS in your HTML files:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="./assets/styles/main.css">
-  <link rel="stylesheet" href="./assets/styles/views/home.css">
-</head>
-<body>
-  <div class="home-hero">
-    <!-- View content -->
-  </div>
-  <script type="module" src="./assets/scripts/views/home.js"></script>
-</body>
+	<head>
+		<link rel="stylesheet" href="./assets/styles/main.css" />
+		<link rel="stylesheet" href="./assets/styles/views/home.css" />
+	</head>
+	<body>
+		<div class="home-hero">
+			<!-- View content -->
+		</div>
+		<script type="module" src="./assets/scripts/views/home.js"></script>
+	</body>
 </html>
 ```
 

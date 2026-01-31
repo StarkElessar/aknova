@@ -24,13 +24,14 @@ The Vite configuration automatically discovers all `page.ts` files in view direc
 ```typescript
 // vite.config.ts (simplified)
 globSync('src/{scripts,styles}/views/**/page.{ts,css}').map(file => {
-  const { dir } = parse(file);
-  const relPath = relative('src', dir); // e.g., 'scripts/views/home'
-  return [relPath, resolve(__dirname, file)];
-})
+	const { dir } = parse(file);
+	const relPath = relative('src', dir); // e.g., 'scripts/views/home'
+	return [relPath, resolve(__dirname, file)];
+});
 ```
 
 This generates output files like:
+
 - `dist/assets/scripts/views/home.js`
 - `dist/assets/scripts/views/about.js`
 
@@ -43,13 +44,13 @@ Create a new view by adding a directory with a `page.ts` file:
 import '@styles/views/home/page.css';
 
 export function initHomePage() {
-  console.log('Home page initialized');
-  
-  // View-specific logic here
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    // Add interactivity
-  }
+	console.log('Home page initialized');
+
+	// View-specific logic here
+	const hero = document.querySelector('.hero');
+	if (hero) {
+		// Add interactivity
+	}
 }
 
 // Auto-initialize when module loads
@@ -71,8 +72,8 @@ Use configured aliases for cleaner imports:
 - `@` → `src/`
 
 ```typescript
-import '@styles/views/home/page.css';  // Preferred
-import '../../styles/views/home/page.css';  // Also works
+import '@styles/views/home/page.css'; // Preferred
+import '../../styles/views/home/page.css'; // Also works
 ```
 
 ## Best Practices

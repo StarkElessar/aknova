@@ -12,6 +12,7 @@
 ## Почему Prettier не форматирует JS/TS/CSS?
 
 Prettier может конфликтовать с ESLint и Stylelint. Чтобы избежать этого:
+
 - JS/TS файлы форматируются через ESLint + @stylistic
 - CSS файлы форматируются через Stylelint
 - HTML файлы форматируются через Prettier
@@ -34,6 +35,7 @@ bun run format
 ## Порядок импортов
 
 Импорты автоматически сортируются в следующем порядке:
+
 1. Статические файлы (.svg, .png, .jpg, и т.д.)
 2. CSS/SCSS файлы
 3. Node modules
