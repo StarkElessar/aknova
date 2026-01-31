@@ -1,23 +1,23 @@
 import { globSync } from 'glob';
 import { parse, relative, resolve } from 'node:path';
 import nunjucks from 'nunjucks';
-import { defineConfig } from 'vite';
+import { defineConfig, type PluginOption } from 'vite';
 import nunjucksPlugin from 'vite-plugin-nunjucks';
 
 export default defineConfig(({ command }) => {
-	const nunjucksEnv = nunjucks.configure(resolve(__dirname, 'src/shared'), {
-		autoescape: true,
-		noCache: command === 'serve'
+	const nunjucksPluginInstance = nunjucksPlugin({
+		templatesDir: resolve(__dirname, 'src/shared'),
+		nunjucksEnvironment: nunjucks.configure(resolve(__dirname, 'src/shared'), {
+			autoescape: true,
+			noCache: command === 'serve'
+		}),
+		variables: {}
 	});
 
 	return {
 		publicDir: resolve(__dirname, 'public'),
 		plugins: [
-			nunjucksPlugin({
-				templatesDir: resolve(__dirname, 'src/shared'),
-				nunjucksEnvironment: nunjucksEnv,
-				variables: {}
-			})
+			nunjucksPluginInstance as PluginOption
 		],
 		build: {
 			outDir: resolve(__dirname, 'dist'),
@@ -61,5 +61,5 @@ export default defineConfig(({ command }) => {
 			host: '0.0.0.0',
 			port: 3000
 		}
-	}
+	};
 });

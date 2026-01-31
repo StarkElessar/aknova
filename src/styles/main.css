@@ -19,11 +19,11 @@ a {
 
 /* Тест autoprefixer - эти свойства должны получить префиксы */
 .autoprefixer-test {
+	appearance: none;
+	backdrop-filter: blur(10px);
+	clip-path: circle(50%);
 	display: flex;
 	user-select: none;
-	backdrop-filter: blur(10px);
-	appearance: none;
-	clip-path: circle(50%);
 }
 
 a:hover {
@@ -89,12 +89,12 @@ h1 {
 }
 
 .test {
-	display: flex;
-	user-select: none;
-	backdrop-filter: blur(10px);
 	appearance: none;
+	backdrop-filter: blur(10px);
 	clip-path: circle(50%);
+	display: flex;
 	mask-image: linear-gradient(black, transparent);
+	user-select: none;
 }
 
 @media (width >= 300px) {
