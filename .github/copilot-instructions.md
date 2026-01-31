@@ -83,11 +83,34 @@ Each view script should:
 - Export an initialization function for testability
 - Auto-execute the initialization when the module loads
 
-### File Naming
+### File and Directory Naming
 
-- View directories: Use lowercase with hyphens (e.g., `about-us/`)
+**Strict kebab-case naming rule:**
+
+All directories and files **MUST** use kebab-case (lowercase with hyphens) for the following:
+
+- **Directories**: All directories without exceptions (e.g., `about-us/`, `user-profile/`)
+- **Static assets**: `.png`, `.jpg`, `.jpeg`, `.gif`, `.svg`, `.webp`, `.ico`, `.woff`, `.woff2`, `.ttf`, `.otf`, `.eot`
+- **Stylesheets**: `.css`, `.scss`, `.sass`, `.less`
+- **Scripts**: `.js`, `.jsx`, `.ts`, `.tsx`
+- **Markup**: `.html`, `.pug`
+- **Configuration**: `.json`, `.yml`, `.yaml`
+
+**Exceptions** (not required to use kebab-case):
+- Markdown files: `.md` (e.g., `README.md`, `CHANGELOG.md`)
+- Docker files: `Dockerfile`, `Dockerfile.*`
+- Special config files with conventional names (e.g., `tsconfig.json`, `package.json`)
+
+**Examples:**
+- ✅ `user-profile.ts`, `about-us.html`, `main-hero.css`
+- ✅ `components/`, `user-settings/`, `api-client/`
+- ✅ `logo-small.svg`, `background-image.png`
+- ❌ `userProfile.ts`, `AboutUs.html`, `mainHero.css`
+- ❌ `UserSettings/`, `apiClient/`
+
+**View-specific naming:**
+- View directories: Use kebab-case (e.g., `about-us/`, `contact-form/`)
 - Entry files: Always named `page.ts` and `page.css` (required by build system)
-- CSS: Use lowercase with hyphens
 
 ### TypeScript Configuration
 
