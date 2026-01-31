@@ -31,7 +31,8 @@
 		"stylelint-order": "^7.0.1",
 		"typescript": "~5.9.3",
 		"typescript-eslint": "^8.54.0",
-		"vite": "^7.2.4"
+		"vite": "^7.2.4",
+		"vite-plugin-nunjucks": "^0.2.0"
 	},
 	"browserslist": [
 		"defaults",

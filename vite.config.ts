@@ -1,13 +1,14 @@
 import { globSync } from 'glob';
 import { parse,relative, resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import { htmlInclude } from './vite-plugin-html-include';
+import nunjucks from 'vite-plugin-nunjucks';
 
 export default defineConfig({
 	publicDir: resolve(__dirname, 'public'),
 	plugins: [
-		htmlInclude({
-			componentsDir: resolve(__dirname, 'src/shared')
+		nunjucks({
+			templatesDir: resolve(__dirname),
+			variables: {}
 		})
 	],
 	build: {
