@@ -1,0 +1,15 @@
+{
+	"extends": ["stylelint-config-standard-scss"],
+	"plugins": ["stylelint-order"],
+	"ignoreFiles": ["dist/**/*", "node_modules/**/*"],
+	"rules": {
+		"order/properties-alphabetical-order": true,
+		"selector-class-pattern": null,
+		"alpha-value-notation": ["percentage", { "exceptProperties": ["opacity"] }],
+		"color-function-notation": "modern",
+		"declaration-block-no-redundant-longhand-properties": true,
+		"property-no-vendor-prefix": null,
+		"no-descending-specificity": null,
+		"scss/load-partial-extension": "never"
+	}
+}
