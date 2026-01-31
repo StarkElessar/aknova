@@ -1,8 +1,5 @@
 module.exports = {
   plugins: {
-    'postcss-logical': {
-      preserve: false
-    },
     'postcss-sort-media-queries': {
       sort: 'mobile-first' // Сортирует и объединяет медиа-запросы от меньших к большим
     },

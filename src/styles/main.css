@@ -30,7 +30,7 @@ body {
 	place-items: center;
 }
 
-@media (width > 300px) {
+@media (width >= 300px) {
 	body {
 		color: green;
 	}
@@ -55,7 +55,7 @@ h1 {
 	will-change: filter;
 }
 
-@media (width > 600px) {
+@media (width >= 600px) {
 	.logo {
 		color: green;
 	}
@@ -73,7 +73,13 @@ h1 {
 	padding: 2em;
 }
 
-@media (width > 300px) {
+.сontainer {
+	padding-inline: 15px;
+	max-width: 1200px;
+	margin-inline: auto;
+}
+
+@media (width >= 300px) {
 	.card {
 		padding: 1em;
 	}
