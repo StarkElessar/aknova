@@ -8,8 +8,7 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"lint": "eslint . && stylelint '**/*.css' && prettier --check '**/*.{html,css}'",
-		"lint:fix": "eslint . --fix && stylelint '**/*.css' --fix && prettier --write '**/*.{html,css}'",
-		"format": "prettier --write '**/*.{html,css,json,md}'"
+		"lint:fix": "eslint . --fix && stylelint '**/*.css' --fix && prettier --write '**/*.{html,css,json,md}'"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.2",
