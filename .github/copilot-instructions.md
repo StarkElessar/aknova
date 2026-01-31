@@ -20,11 +20,13 @@ This is a **multi-page Vite application** using vanilla TypeScript without a fra
 ### Build System
 
 **Vite configuration** (`vite.config.ts`) uses a custom glob-based entry point system:
+
 - Main entry points: `src/scripts/main.ts` and `src/styles/main.css`
 - View-specific entry points: Automatically discovered from `src/{scripts,styles}/views/**/page.{ts,css}`
 - Output structure: All assets go to `dist/assets/` with predictable naming
 
 **Entry point pattern**: Each view gets two files:
+
 - `src/scripts/views/{view-name}/page.ts` - View-specific JavaScript
 - `src/styles/views/{view-name}/page.css` - View-specific CSS
 
@@ -55,30 +57,34 @@ src/
 ### Adding a New View
 
 1. Create directory structure:
-   ```
-   src/scripts/views/{view-name}/page.ts
-   src/styles/views/{view-name}/page.css
-   ```
+
+    ```
+    src/scripts/views/{view-name}/page.ts
+    src/styles/views/{view-name}/page.css
+    ```
 
 2. The Vite build automatically discovers `page.{ts,css}` files and creates entry points
 
 3. Import styles in the TypeScript file:
-   ```typescript
-   import '@styles/views/{view-name}/page.css';
-   ```
+
+    ```typescript
+    import '@styles/views/{view-name}/page.css';
+    ```
 
 4. Export and auto-initialize the view:
-   ```typescript
-   export function initViewName() {
-     // View logic here
-   }
-   
-   initViewName();
-   ```
+
+    ```typescript
+    export function initViewName() {
+    	// View logic here
+    }
+
+    initViewName();
+    ```
 
 ### View Script Pattern
 
 Each view script should:
+
 - Import its corresponding CSS file using the `@styles` alias
 - Export an initialization function for testability
 - Auto-execute the initialization when the module loads
@@ -97,11 +103,13 @@ All directories and files **MUST** use kebab-case (lowercase with hyphens) for t
 - **Configuration**: `.json`, `.yml`, `.yaml`
 
 **Exceptions** (not required to use kebab-case):
+
 - Markdown files: `.md` (e.g., `README.md`, `CHANGELOG.md`)
 - Docker files: `Dockerfile`, `Dockerfile.*`
 - Special config files with conventional names (e.g., `tsconfig.json`, `package.json`)
 
 **Examples:**
+
 - ✅ `user-profile.ts`, `about-us.html`, `main-hero.css`
 - ✅ `components/`, `user-settings/`, `api-client/`
 - ✅ `logo-small.svg`, `background-image.png`
@@ -109,6 +117,7 @@ All directories and files **MUST** use kebab-case (lowercase with hyphens) for t
 - ❌ `UserSettings/`, `apiClient/`
 
 **View-specific naming:**
+
 - View directories: Use kebab-case (e.g., `about-us/`, `contact-form/`)
 - Entry files: Always named `page.ts` and `page.css` (required by build system)
 
@@ -139,35 +148,35 @@ Use **Conventional Commits** format:
 
 1. **Language**: Use English for all commit messages
 2. **Type**: Must be one of:
-   - `feat`: New feature
-   - `fix`: Bug fix
-   - `docs`: Documentation changes
-   - `style`: Code style changes (formatting, missing semicolons, etc.)
-   - `refactor`: Code refactoring without functionality changes
-   - `perf`: Performance improvements
-   - `test`: Adding or updating tests
-   - `build`: Build system or dependency changes
-   - `ci`: CI/CD configuration changes
-   - `chore`: Other changes that don't modify src or test files
+    - `feat`: New feature
+    - `fix`: Bug fix
+    - `docs`: Documentation changes
+    - `style`: Code style changes (formatting, missing semicolons, etc.)
+    - `refactor`: Code refactoring without functionality changes
+    - `perf`: Performance improvements
+    - `test`: Adding or updating tests
+    - `build`: Build system or dependency changes
+    - `ci`: CI/CD configuration changes
+    - `chore`: Other changes that don't modify src or test files
 
 3. **Scope**: Optional, describes affected area (e.g., `auth`, `api`, `ui`, `config`)
 
 4. **Subject**:
-   - Use imperative mood ("add" not "added" or "adds")
-   - Start with lowercase letter
-   - No period at the end
-   - Maximum 72 characters
-   - Be specific and descriptive
+    - Use imperative mood ("add" not "added" or "adds")
+    - Start with lowercase letter
+    - No period at the end
+    - Maximum 72 characters
+    - Be specific and descriptive
 
 5. **Body**:
-   - Add body for complex changes
-   - Explain WHY, not WHAT (code shows what)
-   - Wrap at 72 characters
-   - Separate from subject with blank line
+    - Add body for complex changes
+    - Explain WHY, not WHAT (code shows what)
+    - Wrap at 72 characters
+    - Separate from subject with blank line
 
 6. **Footer**:
-   - Reference issues: `Fixes #123`, `Closes #456`
-   - Breaking changes: `BREAKING CHANGE: description`
+    - Reference issues: `Fixes #123`, `Closes #456`
+    - Breaking changes: `BREAKING CHANGE: description`
 
 ### Examples
 
