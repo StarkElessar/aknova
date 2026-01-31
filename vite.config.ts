@@ -7,7 +7,7 @@ export default defineConfig({
 	publicDir: resolve(__dirname, 'public'),
 	plugins: [
 		htmlInclude({
-			componentsDir: resolve(__dirname, 'src/shared/components')
+			componentsDir: resolve(__dirname, 'src/shared')
 		})
 	],
 	build: {
@@ -43,7 +43,6 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': resolve(__dirname, 'src'),
-			'@shared': resolve(__dirname, 'src/shared'),
 			'@scripts': resolve(__dirname, 'src/scripts'),
 			'@styles': resolve(__dirname, 'src/styles')
 		}
