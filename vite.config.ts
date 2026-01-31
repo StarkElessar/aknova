@@ -1,13 +1,13 @@
 import { globSync } from 'glob';
 import { parse,relative, resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import { createHtmlPlugin } from 'vite-plugin-html';
+import { htmlInclude } from './vite-plugin-html-include';
 
 export default defineConfig({
 	publicDir: resolve(__dirname, 'public'),
 	plugins: [
-		createHtmlPlugin({
-			minify: false
+		htmlInclude({
+			componentsDir: resolve(__dirname, 'src/shared/components')
 		})
 	],
 	build: {
@@ -24,7 +24,7 @@ export default defineConfig({
 						// Remove 'src/' prefix and don't include '/page' in the key
 						// e.g., 'scripts/views/home'
 						const relPath = relative('src', dir);
-						
+
 						return [
 							// Use dir path without '/page'
 							relPath,
@@ -43,6 +43,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': resolve(__dirname, 'src'),
+			'@shared': resolve(__dirname, 'src/shared'),
 			'@scripts': resolve(__dirname, 'src/scripts'),
 			'@styles': resolve(__dirname, 'src/styles')
 		}
