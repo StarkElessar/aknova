@@ -26,9 +26,9 @@ export default defineConfig(({ command }) => {
 				input: {
 					main: resolve(__dirname, 'index.html'),
 					'scripts/main': resolve(__dirname, 'src/scripts/main.ts'),
-					'styles/main': resolve(__dirname, 'src/styles/main.css'),
+					'styles/main': resolve(__dirname, 'src/styles/main.scss'),
 					...Object.fromEntries(
-						globSync('src/{scripts,styles}/views/**/page.{ts,css}').map(file => {
+						globSync('src/{scripts,styles}/views/**/page.{ts,css,scss}').map(file => {
 							const { dir } = parse(file);
 							// Remove 'src/' prefix and don't include '/page' in the key
 							// e.g., 'scripts/views/home'

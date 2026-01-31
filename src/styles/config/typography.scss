@@ -1,0 +1,103 @@
+.bold {
+	font-weight: 700;
+}
+
+.semi-bold {
+	font-weight: 600;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-xs {
+	font-size: 12px;
+	line-height: 1.2;
+}
+
+.text-sm,
+.text-md,
+.text-lg {
+	line-height: 1.4;
+}
+
+.text-sm {
+	font-size: 14px;
+}
+
+.text-md {
+	font-size: 16px;
+}
+
+.text-lg {
+	font-size: 18px;
+}
+
+.title {
+	font-weight: 700;
+
+	&_xs,
+	&_sm,
+	&_md {
+		line-height: 1.3;
+	}
+
+	&_lg,
+	&_2xl,
+	&_3xl {
+		line-height: 1.2;
+	}
+
+	&_xs {
+		font-size: var(--heading-xs);
+	}
+
+	&_sm {
+		font-size: var(--heading-sm);
+	}
+
+	&_md {
+		font-size: var(--heading-md);
+	}
+
+	&_lg {
+		font-size: var(--heading-lg);
+	}
+
+	&_2xl {
+		font-size: var(--heading-2xl);
+	}
+
+	&_3xl {
+		font-size: var(--heading-3xl);
+	}
+
+	&_4xl {
+		font-size: var(--heading-4xl);
+		line-height: 1.1;
+	}
+}
+
+.text-white {
+	color: var(--color-gray-100);
+}
+
+.text-gray {
+	color: var(--color-gray-800);
+}
+
+.text-dark-blue {
+	color: var(--color-blue-900);
+}
+
+.text-blue {
+	color: var(--color-blue-700)
+}
+
+.text-light-blue {
+	color: var(--color-blue-500);
+}

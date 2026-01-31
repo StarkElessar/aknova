@@ -1,15 +1,22 @@
-// Page-specific functionality for index.html
-import '@styles/views/home/page.css';
+import '@styles/views/home/page.scss';
 
-export function initIndexPage() {
-	console.log('Index page initialized');
+import Swiper from 'swiper';
+import { Scrollbar, FreeMode } from 'swiper/modules';
 
-	// Add page-specific logic here
-	// For example: custom animations, form handlers, etc.
-	document.addEventListener('click', () => {
-		document.body.style.background = 'red';
+document.addEventListener('DOMContentLoaded', () => {
+	new Swiper('#hero-slider', {
+		modules: [Scrollbar, FreeMode],
+		spaceBetween: 20,
+		slidesPerView: 'auto',
+		grabCursor: true,
+		breakpoints: {
+			480: {
+				spaceBetween: 32
+			}
+		},
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true
+		}
 	});
-}
-
-// Auto-initialize when module loads
-initIndexPage();
+});

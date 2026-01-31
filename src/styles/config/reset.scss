@@ -1,0 +1,54 @@
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+
+fieldset {
+	padding: 0;
+}
+
+body,
+h1,
+p {
+	margin: 0;
+}
+
+body {
+	color: var(--color-gray-900);
+	min-height: 100vh;
+	min-width: 365px;
+}
+
+a {
+	color: #646cff;
+	font-weight: 500;
+	text-decoration: inherit;
+
+	&:hover {
+		color: #535bf2;
+	}
+}
+
+fieldset,
+button,
+input {
+	outline: none;
+	border: none;
+}
+
+button {
+	background-color: transparent;
+	font-family: inherit;
+	line-height: inherit;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+}
