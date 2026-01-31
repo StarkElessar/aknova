@@ -10,6 +10,15 @@
 		"declaration-block-no-redundant-longhand-properties": true,
 		"property-no-vendor-prefix": null,
 		"no-descending-specificity": null,
-		"scss/load-partial-extension": "never"
+		"scss/load-partial-extension": "never",
+
+		"property-disallowed-list": [
+			"padding-left",
+			"padding-right",
+			"margin-left",
+			"margin-right",
+			"width",
+			"height"
+		]
 	}
 }
