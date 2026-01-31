@@ -74,10 +74,10 @@ h1 {
 }
 
 .сontainer {
-	padding-inline: 15px;
-	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 1200px;
+	padding-inline: 15px;
 }
 
 @media (width >= 300px) {
