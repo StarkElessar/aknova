@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
+		"modx:build": "tsc && vite build --config vite.modx.config.ts",
 		"preview": "vite preview",
 		"lint": "eslint . && stylelint '**/*.css' && prettier --check '**/*.{html,css}'",
 		"lint:fix": "eslint . --fix && stylelint '**/*.css' --fix && prettier --write '**/*.{html,css,json,md}'"

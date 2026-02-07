@@ -1,0 +1,269 @@
+{
+	"navLinks": [
+		{
+			"name": "О компании",
+			"link": "/o-kompanii/",
+			"submenu": [
+				{
+					"name": "Все про окна",
+					"link": "/clauses/"
+				},
+				{
+					"name": "Наши работы",
+					"link": "/raboty/"
+				},
+				{
+					"name": "Отзывы",
+					"link": "/otzyvy/"
+				},
+				{
+					"name": "Гарантия",
+					"link": "/o-kompanii/garantiya/"
+				},
+				{
+					"name": "Написать директору",
+					"link": "/o-kompanii/napisat-direktoru/"
+				}
+			]
+		},
+		{
+			"name": "Акции",
+			"link": "/akczii/"
+		},
+		{
+			"name": "Честный монтаж QR",
+			"link": "/uslugi/qr",
+			"accent": true
+		},
+		{
+			"name": "Продукция",
+			"link": "/produktsiya/",
+			"submenu": [
+				{
+					"name": "Замкнутый армир",
+					"link": "/produktsiya/zamknutiy-armir/"
+				},
+				{
+					"name": "Противовзломные окна",
+					"link": "/produktsiya/protivovzlomnye-okna/"
+				},
+				{
+					"name": "Окна Proplex",
+					"link": "/produktsiya/okna-proplex/"
+				},
+				{
+					"name": "Двери",
+					"link": "/produktsiya/dveri/"
+				},
+				{
+					"name": "Балконы",
+					"link": "/produktsiya/balkony/"
+				},
+				{
+					"name": "Откосы",
+					"link": "/produktsiya/otkosy/"
+				},
+				{
+					"name": "Подоконники",
+					"link": "/produktsiya/podokonniki/"
+				},
+				{
+					"name": "Горизонтальные жалюзи",
+					"link": "/produktsiya/zhalyuzi/"
+				},
+				{
+					"name": "Безопасные окна",
+					"link": "/produktsiya/bezopasnye-okna/"
+				},
+				{
+					"name": "Готовые окна",
+					"link": "/produktsiya/ready/"
+				},
+				{
+					"name": "Стеклопакеты",
+					"link": "/produktsiya/steklopakety/"
+				},
+				{
+					"name": "Москитные сетки",
+					"link": "/produktsiya/moskitnyie-setki/"
+				}
+			]
+		},
+		{
+			"name": "Цены",
+			"link": "/tseny/"
+		},
+		{
+			"name": "Услуги",
+			"link": "/uslugi/",
+			"submenu": [
+				{
+					"name": "Рассрочка",
+					"link": "/uslugi/rassrochka-kredit/"
+				},
+				{
+					"name": "Доставка",
+					"link": "/uslugi/dostavka/"
+				},
+				{
+					"name": "Замер",
+					"link": "/uslugi/zamer/"
+				},
+				{
+					"name": "Монтаж",
+					"link": "/uslugi/montazh/"
+				},
+				{
+					"name": "Честный монтаж QR",
+					"link": "/uslugi/qr/"
+				},
+				{
+					"name": "Ремонт окон",
+					"link": "/uslugi/remont-okon/",
+					"submenu": [
+					{
+						"name": "Регулировка створок пластиковых окон",
+						"link": "/uslugi/remont-okon/regulirovka-stvorok-plastikovyix-okon/"
+					},
+					{
+						"name": "Регулировка створок пластиковых дверей",
+						"link": "/uslugi/remont-okon/regulirovka-stvorok-plastikovyix-dverej/"
+					},
+					{
+						"name": "Замена уплотнителя пластиковых окон и дверей",
+						"link": "/uslugi/remont-okon/zamena-uplotnitelya-plastikovyix-okon-i-dverej/"
+					},
+					{
+						"name": "Установка прижимов и планок для пластиковых окон",
+						"link": "/uslugi/remont-okon/ustanovka-prizhimov-i-planok-dlya-plastikovyix-okon/"
+					},
+					{
+						"name": "Восстановление геометрии пластиковых окон",
+						"link": "/uslugi/remont-okon/vosstanovlenie-geometrii-plastikovyix-okon/"
+					},
+					{
+						"name": "Установка стеклопакетов",
+						"link": "/uslugi/remont-okon/ustanovka-steklopaketov/"
+					},
+					{
+						"name": "Замена фурнитуры",
+						"link": "/uslugi/remont-okon/zamena-furnituryi/"
+					},
+					{
+						"name": "Ремонт ручек пластиковых окон и дверей",
+						"link": "/uslugi/remont-okon/remont-ruchek-plastikovyix-okon-i-dverej/"
+					},
+					{
+						"name": "Обслуживание пластиковых окон и дверей",
+						"link": "/uslugi/remont-okon/obsluzhivanie-plastikovyix-okon-i-dverej/"
+					},
+					{
+						"name": "Перемонтаж пластиковых окон",
+						"link": "/uslugi/remont-okon/peremontazh-plastikovyix-okon/"
+					},
+					{
+						"name": "Установка отливов и подоконников",
+						"link": "/uslugi/remont-okon/ustanovka-otlivov-i-podokonnikov/"
+					},
+					{
+						"name": "Ремонт и замена подоконников",
+						"link": "/uslugi/remont-okon/remont-i-zamena-podokonnikov/"
+					},
+					{
+						"name": "Установка дверных петель",
+						"link": "/uslugi/remont-okon/ustanovka-dvernyix-petel/"
+					},
+					{
+						"name": "Установка оконных петель",
+						"link": "/uslugi/remont-okon/ustanovka-okonnyix-petel/"
+					},
+					{
+						"name": "Установка откосов",
+						"link": "/uslugi/remont-okon/ustanovka-otkosov/"
+					},
+					{
+						"name": "Ремонт откосов",
+						"link": "/uslugi/remont-okon/remont-otkosov/"
+					},
+					{
+						"name": "Замена герметизации окон",
+						"link": "/uslugi/remont-okon/zamena-germetizaczii-okon/"
+					},
+					{
+						"name": "Установка и ремонт москитных сеток на окна",
+						"link": "/uslugi/remont-okon/ustanovka-i-remont-moskitnyix-setok-na-okna/"
+					},
+					{
+						"name": "Установка и ремонт москитных сеток на двери",
+						"link": "/uslugi/remont-okon/ustanovka-i-remont-moskitnyix-setok-na-dveri/"
+					},
+					{
+						"name": "Установка и замена доводчика",
+						"link": "/uslugi/remont-okon/ustanovka-i-zamena-dovodchika/"
+					}
+					]
+				},
+				{
+					"name": "Отделка балконов",
+					"link": "/uslugi/otdelka-balkonov-i-lodzhij/"
+				},
+				{
+					"name": "Ламинация",
+					"link": "/uslugi/laminacziya-plastikovyix-okon/"
+				},
+				{
+					"name": "Утепление окон",
+					"link": "/uslugi/uteplenie-okon/"
+				},
+				{
+					"name": "Тонировка стеклопакета",
+					"link": "/uslugi/tonirovka-steklopaketa/"
+				},
+				{
+					"name": "Звукоизоляция окон",
+					"link": "/uslugi/zvukoizolyacziya-okon/"
+				},
+				{
+					"name": "Бронирование стеклопакета",
+					"link": "/uslugi/bronirovanie-steklopaketa/"
+				},
+				{
+					"name": "Установка противовзломной фурнитуры",
+					"link": "/uslugi/ustanovka-protivovzlomnoj-furnituryi/"
+				},
+				{
+					"name": "Замена глухого окна",
+					"link": "/uslugi/ustanovka-stvorki-v-neotkryvnoe-okno/"
+				},
+				{
+					"name": "Проверка окон тепловизором",
+					"link": "/uslugi/teplovizor/"
+				},
+				{
+					"name": "Диагностика продувания окон",
+					"link": "/uslugi/diagnostika-produvaniya/"
+				},
+				{
+					"name": "Проверка качества монтажа",
+					"link": "/uslugi/proverka-kachestva-montazha/"
+				},
+				{
+					"name": "Измерение влажности окон",
+					"link": "/uslugi/izmerenie-vlazhnosti/"
+				},
+				{
+					"name": "Проверка вентиляции окон",
+					"link": "/uslugi/proverka-ventilyacii/"
+				},
+				{
+					"name": "Проверка качества сборки окон",
+					"link": "/uslugi/proverka-kachestva-sborki-okon/"
+				}
+			]
+		},
+		{
+			"name": "Контакты",
+			"link": "/kontakty/"
+		}
+	]
+}
