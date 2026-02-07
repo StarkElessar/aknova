@@ -29,13 +29,13 @@
 	}
 
 	&_white {
-		color: var(--color-gray-100);
-		border-color: var(--color-gray-100);
+		color: var(--color-grey-100);
+		border-color: var(--color-grey-100);
 
 		&:not(:disabled) {
 			@media (any-hover: hover) {
 				&:hover {
-					background-color: var(--color-gray-100);
+					background-color: var(--color-grey-100);
 					color: var(--color-blue-900);
 				}
 			}
@@ -50,7 +50,7 @@
 			@media (any-hover: hover) {
 				&:hover {
 					background-color: var(--color-blue-900);
-					color: var(--color-gray-100);
+					color: var(--color-grey-100);
 				}
 			}
 		}
@@ -70,5 +70,25 @@
 				}
 			}
 		}
+	}
+}
+
+.square-social-btn {
+	width: 32px;
+	aspect-ratio: 1;
+	border-radius: var(--radius-xs);
+	display: grid;
+	place-content: center;
+
+	&_default {
+		background-color: var(--color-black-700);
+	}
+
+	&_tg {
+		background-color: var(--color-blue-600);
+	}
+
+	&_max {
+		background: var(--gradient-max-app);
 	}
 }

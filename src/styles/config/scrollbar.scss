@@ -1,0 +1,29 @@
+/* 1. Стандарт для Firefox (работает с 2018 года) */
+* {
+	scrollbar-width: thin; /* ширина: auto, thin или none */
+	scrollbar-color: var(--color-blue-900) var(--color-black-700); /* [цвет ползунка] [цвет дорожки] */
+}
+
+/* 2. Для Webkit-браузеров (Chrome, Safari, Edge, Opera, Яндекс) */
+/* Вся область скроллбара */
+::-webkit-scrollbar {
+	width: 8px;  /* ширина вертикального */
+	height: 8px; /* высота горизонтального */
+}
+
+/* Дорожка (фон) */
+::-webkit-scrollbar-track {
+	background: var(--color-black-700);
+}
+
+/* Ползунок (то, за что тянем) */
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-blue-900);
+	border-radius: 10px;       /* скругление */
+	border: 2px solid var(--color-black-700); /* отступ внутри дорожки */
+}
+
+/* Эффект при наведении */
+::-webkit-scrollbar-thumb:hover {
+	background-color: color-mix(in srgb, var(--color-blue-900), var(--color-grey-100) 30%);
+}

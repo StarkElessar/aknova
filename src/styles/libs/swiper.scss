@@ -1,0 +1,60 @@
+.swiper {
+	margin-inline: auto;
+	position: relative;
+	z-index: 1;
+	display: block;
+}
+
+.swiper-overflow {
+	overflow: hidden;
+}
+
+.swiper-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+}
+
+.swiper-horizontal {
+	touch-action: pan-y;
+}
+
+.swiper-slide {
+	flex-shrink: 0;
+
+	.swiper-backface-hidden & {
+		transform: translateZ(0);
+		backface-visibility: hidden;
+	}
+}
+
+.swiper-scrollbar {
+	--radius-scrollbar: 2px;
+
+	border-radius: var(--radius-scrollbar);
+	position: relative;
+	touch-action: none;
+	background-color: color-mix(in srgb, var(--color-grey-100), transparent 80%);
+}
+
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 50;
+}
+
+.swiper-scrollbar-drag {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: color-mix(in srgb, var(--color-grey-100), transparent 30%);
+	border-radius: var(--radius-scrollbar);
+	left: 0;
+	top: 0;
+}

@@ -1,0 +1,146 @@
+@use "@styles/config/mixins" as *;
+
+.nav-menu {
+	$this: &;
+
+	position: fixed;
+	left: 0;
+	right: 0;
+	transition: top var(--transition-slow), opacity var(--transition-slow);
+	top: -100%;
+	overflow: hidden;
+	background-color: var(--color-grey-100);
+	border-block-start: 1px solid var(--color-grey-400);
+	opacity: 0;
+
+	.burger-menu-opened & {
+		width: calc(100% - var(--scrollbar-width));
+		top: var(--header-height);
+		opacity: 1;
+		box-shadow: var(--shadow-default);
+	}
+
+	@media (width >= 960px) {
+		margin-inline: auto;
+		position: static;
+		opacity: 1;
+		border-block-start: none;
+		overflow: visible;
+		z-index: 2;
+	}
+
+	&__list {
+		display: grid;
+		overflow: hidden auto;
+		max-height: 400px;
+		padding: var(--container-offset);
+		@include hide-scrollbar;
+
+		@media (width >= 960px) {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			overflow: visible;
+			max-height: unset;
+			padding: 0;
+		}
+
+		.burger-menu-opened & {
+			ul {
+				padding-inline-start: 16px;
+			}
+
+			a {
+				padding-block: 4px;
+			}
+		}
+	}
+
+	&__item {
+		@media (width >= 960px) {
+			position: relative;
+
+			&[data-level="1"] {
+				@media (any-hover: hover) {
+					&:hover {
+						.submenu-wrapper {
+							display: block;
+						}
+					}
+				}
+
+				> #{$this}__link {
+					padding: 10px 6px;
+				}
+			}
+
+			&[data-level="2"] {
+				#{$this}__link {
+					padding: 8px 16px;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+
+				> .submenu {
+					padding-inline-start: 16px;
+				}
+			}
+
+			&[data-level="3"] {
+				#{$this}__link {
+					font-size: 12px;
+					border-inline-start: 1px solid var(--color-blue-500);
+
+					@media (any-hover: hover) {
+						&:hover {
+							border-color: var(--color-blue-700)
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__link {
+		display: block;
+		color: var(--color-link);
+		transition: color var(--transition-default), border-color var(--transition-default);
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: color-mix(in srgb, var(--color-link), var(--color-grey-100) 30%);
+			}
+		}
+
+		&:not(.accent) {
+			--color-link: var(--color-blue-900);
+		}
+
+		&.accent {
+			--color-link: var(--color-red-700);
+		}
+	}
+}
+
+.submenu-wrapper {
+	@media (width >= 960px) {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: var(--color-grey-100);
+		width: max-content;
+		max-width: 360px;
+		overflow: hidden;
+		box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+		border-radius: var(--radius-lg);
+		z-index: 1;
+
+		> .submenu {
+			padding-block: 10px;
+			max-height: 80dvh;
+			overflow: hidden auto;
+		}
+	}
+}

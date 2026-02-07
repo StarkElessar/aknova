@@ -1,0 +1,11 @@
+.how-we-do {
+	&__slider {
+		.swiper-slide {
+			padding: 24px;
+			background-color: grey;
+			min-height: 300px;
+
+			width: 286px !important;
+		}
+	}
+}

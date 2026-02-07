@@ -1,11 +1,9 @@
-import '@styles/views/home/page.scss';
-
 import Swiper from 'swiper';
-import { Scrollbar, FreeMode } from 'swiper/modules';
+import { Scrollbar,  } from 'swiper/modules';
 
-document.addEventListener('DOMContentLoaded', () => {
+function initHomeScripts() {
 	new Swiper('#hero-slider', {
-		modules: [Scrollbar, FreeMode],
+		modules: [Scrollbar],
 		spaceBetween: 20,
 		slidesPerView: 'auto',
 		grabCursor: true,
@@ -15,8 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		},
 		scrollbar: {
-			el: '.swiper-scrollbar',
-			draggable: true
+			el: '.swiper-scrollbar'
 		}
 	});
-});
+
+	new Swiper('.how-we-do__slider', {
+		slidesPerGroup: 1,
+		slidesPerView: 7,
+		centeredSlides: false,
+		slidesPerGroupSkip: 7 ,
+		spaceBetween: 32,
+		breakpoints: {
+			640: {
+				slidesPerGroup: 7,
+			}
+		}
+	})
+}
+
+document.addEventListener('DOMContentLoaded', initHomeScripts);

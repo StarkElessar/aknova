@@ -1,13 +1,15 @@
 :root {
-	--color-gray-900: #3f4445;
-	--color-gray-800: #414b4c;
-	--color-gray-700: #777;
-	--color-gray-600: #999;
-	--color-gray-400: #ebeef2;
-	--color-gray-300: #f7fdff;
-	--color-gray-100: #fff;
+	--color-black-700: #2e3335;
+	--color-grey-900: #3f4445;
+	--color-grey-800: #414b4c;
+	--color-grey-700: #777;
+	--color-grey-600: #999;
+	--color-grey-400: #ebeef2;
+	--color-grey-300: #f7fdff;
+	--color-grey-100: #fff;
 	--color-blue-900: #005bab;
 	--color-blue-700: #007bff;
+	--color-blue-600: #039be5;
 	--color-blue-500: #64ceff;
 	--color-red-700: #f2422c;
 
@@ -21,23 +23,33 @@
 			rgba(242, 62, 45, 0.95) 80%
 	);
 
-	--heading-xs: 16px;
-	--heading-sm: 18px;
-	--heading-md: 20px;
-	--heading-lg: 24px;
-	--heading-2xl: 30px;
-	--heading-3xl: 26px;
-	--heading-4xl: 32px;
+	--gradient-max-app: linear-gradient(
+			48.26deg,
+			#3eb9fd 3.86%,
+			#2d46f9 52.06%,
+			#8b41e1 100.27%
+	);
 
+	--radius-xs: 6px;
+	--radius-sm: 10px;
+	--radius-md: 12px;
+	--radius-lg: 15px;
+	--radius-2xl: 20px;
+
+	--container-offset: 15px;
+	--header-height: 70px;
 	--control-height-md: 44px;
 	--control-height-lg: 56px;
-	--control-radius: 12px;
+	--control-radius: var(--radius-md);
+
+	--transition-fast: .15s ease-in-out;
+	--transition-default: .25s ease-in-out;
+	--transition-slow: .4s ease-in-out;
 
 	overscroll-behavior: none;
-	background-color: var(--color-gray-100);
-	color: rgb(255 255 255 / 87%);
+	background-color: var(--color-grey-100);
 	color-scheme: light dark;
-	font-family: Open Sansm, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: Open Sans, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-synthesis: none;
@@ -46,8 +58,24 @@
 	font-size: 16px;
 	text-rendering: optimizelegibility;
 
+	--heading-xs: 16px;
+	--heading-sm: 18px;
+	--heading-md: 20px;
+	--heading-lg: 24px;
+	--heading-2xl: 30px;
+	--heading-3xl: 26px;
+	--heading-4xl: 32px;
+
+	@media (width >= 480px) {
+		--container-offset: 30px;
+	}
+
 	@media (width >= 640px) {
 		--heading-3xl: 35px;
 		--heading-4xl: 48px;
+	}
+
+	@media (width >= 960px) {
+		--header-height: 90px;
 	}
 }

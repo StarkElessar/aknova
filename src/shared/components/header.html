@@ -1,13 +1,84 @@
 <header class="header">
 	<div class="header__container container">
-		<div class="logo"></div>
-		<nav class="nav-menu">
-			<ul class="menu-list">
-				<li class="menu-item">
-					<a href="#">Menu Item 1</a>
-					<div class="user-profile"><img src="#" alt="" class="profile-pic" /><span class="username">User Name</span></div>
-				</li>
+		<button type="button" class="header__burger" id="burger-btn">
+			<span></span>
+		</button>
+
+		<a class="header__logo" href="/">
+			<img src="/images/logo.png" width="130" height="38" alt="Акнова логотип">
+			<address class="text-xs text-grey bold">ул.Салмышская, 16/2</address>
+		</a>
+
+		<nav class="nav-menu" itemscope itemtype="https://www.schema.org/SiteNavigationElement">
+			<ul class="nav-menu__list text-uppercase bold text-sm">
+				{% for item in navLinks %}
+					<li itemprop="name"
+					    class="nav-menu__item {% if loop.first %}first{% endif %} {% if loop.last %}last{% endif %}"
+					    data-level="1">
+						<a itemprop="url" href="{{ item.link }}" class="nav-menu__link {% if item.accent %} accent {% endif %}">
+							{{ item.name }}
+						</a>
+						{% if item.submenu %}
+							<div class="submenu-wrapper">
+								<ul class="submenu">
+									{% for subitem in item.submenu %}
+									<li itemprop="name"
+									    data-level="2"
+									    class="nav-menu__item {% if loop.first %}first{% endif %} {% if loop.last %}last{% endif %}">
+										<a itemprop="url"
+										   title="{{ subitem.name }}"
+										   href="{{ subitem.link }}"
+										   class="nav-menu__link">
+											{{ subitem.name }}
+										</a>
+										{% if subitem.submenu %}
+										<ul class="submenu">
+											{% for subsubitem in subitem.submenu %}
+											<li itemprop="name"
+											    data-level="3"
+											    class="nav-menu__item {% if loop.first %}first{% endif %} {% if loop.last %}last{% endif %}">
+												<a itemprop="url"
+												   title="{{ subsubitem.name }}"
+												   href="{{ subsubitem.link }}"
+												   class="nav-menu__link">
+													{{ subsubitem.name }}
+												</a>
+											</li>
+											{% endfor %}
+										</ul>
+										{% endif %}
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
+					</li>
+				{% endfor %}
 			</ul>
 		</nav>
+
+		<div class="header__contacts">
+			<a href="tel:+73532556666"
+			   class="header__phone text-uppercase bold">
+				+7 3532 55-66-66
+			</a>
+			<button type="button"
+			        class="text-uppercase bold text-dark-blue">
+				Заказать звонок
+			</button>
+			<span class="text-xs text-grey">Пн–Пт с 9:00 до 17:00, Сб–Вс выходной</span>
+		</div>
+
+		<div class="header__social">
+			<a href="tel:+73532556666" class="square-social-btn square-social-btn_default">
+				<img src="/icons/simple-phone.svg" width="16" height="16" alt="Телефон">
+			</a>
+			<a href="https://t.me/+79228888990" class="square-social-btn square-social-btn_tg">
+				<img src="/icons/telegram.svg" width="16" height="16" alt="Telegram">
+			</a>
+			<a href="https://max.ru/m/+79228888990" class="square-social-btn square-social-btn_max">
+				<img src="/icons/max.svg" width="16" height="16" alt="Max">
+			</a>
+		</div>
 	</div>
 </header>

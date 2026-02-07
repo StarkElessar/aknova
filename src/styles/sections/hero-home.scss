@@ -53,12 +53,7 @@
 	}
 
 	&__slider {
-		padding-block-end: 24px;
-	}
-
-	&__slide {
-		width: auto;
-		height: unset;
-		display: flex;
+		display: grid;
+		padding-block-end: 28px;
 	}
 }

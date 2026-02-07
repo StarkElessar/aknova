@@ -1,3 +1,9 @@
+.burger-menu-opened {
+	overflow: hidden;
+	padding-inline-end: var(--scrollbar-width);
+	background-color: var(--color-black-700);
+}
+
 .wrapper {
 	display: flex;
 	flex-direction: column;
@@ -6,7 +12,7 @@
 }
 
 .container {
-	max-width: 1260px;
-	padding-inline: 30px;
+	max-width: 1300px;
+	padding-inline: var(--container-offset);
 	margin-inline: auto;
 }

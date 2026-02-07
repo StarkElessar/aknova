@@ -1,0 +1,12 @@
+@mixin hide-scrollbar {
+	/* IE и старый Edge */
+	-ms-overflow-style: none;
+
+	/* Скрыть полосу прокрутки в Firefox */
+	scrollbar-width: none;
+
+	/* Скрыть полосу прокрутки в Webkit-браузерах (Chrome, Safari, Edge, Opera, Яндекс) */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
