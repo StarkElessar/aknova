@@ -28,6 +28,12 @@
 		height: var(--control-height-lg);
 	}
 
+	&_white,
+	&_blue {
+		border-width: 2px;
+		border-style: solid;
+	}
+
 	&_white {
 		color: var(--color-grey-100);
 		border-color: var(--color-grey-100);
