@@ -28,7 +28,7 @@ function initHomeScripts() {
 				slidesPerGroup: 7,
 			}
 		}
-	})
+	});
 }
 
 document.addEventListener('DOMContentLoaded', initHomeScripts);

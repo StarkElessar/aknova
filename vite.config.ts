@@ -2,6 +2,7 @@ import { resolve } from 'node:path';
 import nunjucks from 'nunjucks';
 import { defineConfig, type PluginOption } from 'vite';
 import nunjucksPlugin from 'vite-plugin-nunjucks';
+
 import common from './data/common.json';
 
 export default defineConfig(({ command }) => {
