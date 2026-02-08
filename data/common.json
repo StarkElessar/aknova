@@ -265,5 +265,151 @@
 			"name": "Контакты",
 			"link": "/kontakty/"
 		}
+	],
+	"footerLinks": [
+		{
+			"title": "О компании",
+			"links": [
+				{
+					"name": "Все про окна",
+					"link": "/clauses/"
+				},
+				{
+					"name": "Наши работы",
+					"link": "/raboty/"
+				},
+				{
+					"name": "Отзывы",
+					"link": "/otzyvy/"
+				},
+				{
+					"name": "Написать директору",
+					"link": "/o-kompanii/napisat-direktoru/"
+				}
+			]
+		},
+		{
+			"title": "Услуги",
+			"links": [
+				{
+					"name": "Доставка",
+					"link": "/uslugi/dostavka/"
+				},
+				{
+					"name": "Замер",
+					"link": "/uslugi/zamer/"
+				},
+				{
+					"name": "Монтаж",
+					"link": "/uslugi/montazh/"
+				},
+				{
+					"name": "Честный монтаж QR",
+					"link": "/uslugi/qr/"
+				},
+				{
+					"name": "Ремонт окон",
+					"link": "/uslugi/remont-okon/"
+				},
+				{
+					"name": "Отделка балконов",
+					"link": "/uslugi/otdelka-balkonov-i-lodzhij/"
+				},
+				{
+					"name": "Ламинация",
+					"link": "/uslugi/laminacziya-plastikovyix-okon/"
+				}
+			]
+		},
+		{
+			"title": "Продукция",
+			"links": [
+				{
+					"name": "Замкнутый армир",
+					"link": "/produktsiya/zamknutiy-armir/"
+				},
+				{
+					"name": "Противовзломные окна",
+					"link": "/produktsiya/protivovzlomnye-okna/"
+				},
+				{
+					"name": "Окна Proplex",
+					"link": "/produktsiya/okna-proplex/"
+				},
+				{
+					"name": "Двери",
+					"link": "/produktsiya/dveri/"
+				},
+				{
+					"name": "Балконы",
+					"link": "/produktsiya/balkony/"
+				},
+				{
+					"name": "Откосы",
+					"link": "/produktsiya/otkosy/"
+				},
+				{
+					"name": "Подоконники",
+					"link": "/produktsiya/podokonniki/"
+				},
+				{
+					"name": "Горизонтальные жалюзи",
+					"link": "/produktsiya/zhalyuzi/"
+				},
+				{
+					"name": "Безопасные окна",
+					"link": "/produktsiya/bezopasnye-okna/"
+				},
+				{
+					"name": "Готовые окна",
+					"link": "/produktsiya/ready/"
+				},
+				{
+					"name": "Стеклопакеты",
+					"link": "/produktsiya/steklopakety/"
+				},
+				{
+					"name": "Москитные сетки",
+					"link": "/produktsiya/moskitnyie-setki/"
+				}
+			]
+		},
+		{
+			"title": "Информация",
+			"links": [
+				{
+					"name": "Акции",
+					"link": "/akczii/"
+				},
+				{
+					"name": "Цены",
+					"link": "/tseny/"
+				},
+				{
+					"name": "Контакты",
+					"link": "/kontakty/"
+				},
+				{
+					"name": "Новости",
+					"link": "/news/"
+				},
+				{
+					"name": "Ответы на вопросы",
+					"link": "/faq/"
+				},
+				{
+					"name": "Карта сайта",
+					"link": "/map/"
+				},
+				{
+					"name": "Рассрочка",
+					"link": "/uslugi/rassrochka-kredit/"
+				},
+				{
+					"name": "Гарантия",
+					"link": "/o-kompanii/garantiya/"
+				}
+			]
+		}
 	]
 }
