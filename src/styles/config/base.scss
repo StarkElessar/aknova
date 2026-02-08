@@ -16,3 +16,22 @@
 	padding-inline: var(--container-offset);
 	margin-inline: auto;
 }
+
+.section-group {
+	--space: 60px;
+	display: grid;
+	gap: var(--space);
+	padding-block: var(--space);
+
+	@media (width >= 640px) {
+		--space: 120px;
+	}
+
+	&_white {
+		background-color: var(--color-grey-100);
+	}
+
+	&_sky {
+		background-color: var(--color-grey-300);
+	}
+}
