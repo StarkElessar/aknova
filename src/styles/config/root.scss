@@ -23,6 +23,12 @@
 			rgba(242, 62, 45, 0.95) 80%
 	);
 
+	--gradient-blue: linear-gradient(
+			97.54deg,
+			var(--color-blue-900) -9.01%,
+			var(--color-blue-700) 126.41%
+	);
+
 	--gradient-max-app: linear-gradient(
 			48.26deg,
 			#3eb9fd 3.86%,
