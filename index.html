@@ -10,8 +10,14 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			{% include "components/header.html" %} {% include "sections/hero-home.html" %} {% include "sections/how-we-do.html" %} {%
-			include "components/footer.html" %}
+			{% include "components/header.html" %}
+			{% include "sections/hero-home.html" %}
+			{% include "sections/how-we-do.html" %}
+			<div class="section-group section-group_white">
+				{% include "sections/call-request-cta.html" %}
+			</div>
+			{% include "sections/office-map.html" %}
+			{% include "components/footer.html" %}
 		</div>
 		<script type="module" src="/src/scripts/main.ts"></script>
 		<script type="module" src="/src/scripts/views/home/page.ts"></script>
