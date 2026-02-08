@@ -1,0 +1,127 @@
+.footer {
+	background-color: var(--color-blue-900);
+	padding-block: 30px;
+
+	@media (width >= 640px) {
+		padding-block: 60px;
+	}
+
+	&__container {
+		display: grid;
+		row-gap: 32px;
+
+		@media (width >= 960px) {
+			grid-template-columns: 4fr 6fr;
+			column-gap: 60px;
+		}
+
+		> *:nth-child(1) {
+			display: grid;
+			gap: 24px;
+			justify-items: center;
+			text-align: center;
+
+			@media (width >= 640px) {
+				text-align: start;
+				justify-items: start;
+			}
+		}
+
+		> *:nth-child(2) {
+			display: grid;
+			align-items: start;
+			gap: 32px;
+
+			@media (width >= 640px) {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: repeat(2, auto);
+			}
+		}
+
+		> *:nth-child(3) {
+			text-align: center;
+			padding-block-start: 12px;
+			border-block-start: 1px solid color-mix(in srgb, var(--color-grey-100), transparent 80%);
+			color: color-mix(in srgb, var(--color-grey-100), transparent 50%);
+
+			@media (width >= 960px) {
+				grid-row: 2 / 3;
+				grid-column: 1 / -1;
+			}
+		}
+	}
+
+	&__contacts {
+		display: grid;
+		gap: 16px;
+		justify-items: center;
+
+		@media (width >= 640px) {
+			justify-items: start;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+		}
+	}
+
+	&__request-btn {
+		@media (width >= 640px) {
+			width: max-content;
+		}
+	}
+
+	&__socials {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+
+		a {
+			flex-shrink: 0;
+			width: 35px;
+			aspect-ratio: 1;
+			display: grid;
+			place-content: center;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+
+	&__vk {
+		border-radius: var(--radius-sm);
+		overflow: hidden;
+	}
+
+	&__nav-list {
+		display: grid;
+		gap: 16px;
+		justify-items: center;
+
+		@media (width >= 640px) {
+			justify-items: normal;
+		}
+
+		&:nth-child(1),
+		&:nth-child(2) {
+			@media (width >= 640px) {
+				grid-column: 1 / 2;
+			}
+		}
+
+		&:nth-child(3) {
+			@media (width >= 640px) {
+				grid-column: 2 / 3;
+				grid-row: 1 / -1;
+			}
+		}
+
+		&:nth-child(4) {
+			@media (width >= 640px) {
+				grid-column: 3 / 4;
+				grid-row: 1 / -1;
+			}
+		}
+	}
+}
