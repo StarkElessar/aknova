@@ -52,6 +52,7 @@
 	--transition-default: .25s ease-in-out;
 	--transition-slow: .4s ease-in-out;
 
+	scroll-behavior: smooth;
 	overscroll-behavior: none;
 	background-color: var(--color-grey-100);
 	color-scheme: light dark;
