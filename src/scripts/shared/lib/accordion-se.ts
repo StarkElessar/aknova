@@ -70,7 +70,7 @@ export class AccordionSE {
 		const defaultConfig: AccordionConfig = {
 			shouldOpenAll: false,
 			defaultOpen: [],
-			collapsedClass: 'open',
+			collapsedClass: 'opened',
 			selectors: {
 				header: '.accordion-se__header',
 				item: '.accordion-se__item',

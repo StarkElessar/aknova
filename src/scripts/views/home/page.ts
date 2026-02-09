@@ -31,10 +31,7 @@ function initHomeScripts() {
 		}
 	});
 
-	new AccordionSE('.accordion-se', {
-		collapsedClass: 'opened',
-		shouldOpenAll: true
-	});
+	new AccordionSE('.accordion-se');
 }
 
 document.addEventListener('DOMContentLoaded', initHomeScripts);
