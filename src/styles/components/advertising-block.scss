@@ -1,0 +1,35 @@
+.advertising-block {
+	background-color: var(--color-grey-100);
+	border-radius: var(--radius-lg);
+	padding: 24px;
+	display: grid;
+	gap: 16px;
+
+	@media (width >= 640px) {
+		padding-inline: 32px;
+	}
+
+	&_shadow {
+		box-shadow: var(--shadow-default);
+	}
+
+	&__row {
+		display: grid;
+		gap: 20px;
+		align-items: center;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		justify-items: center;
+		text-align: center;
+
+		@media (width >= 640px) {
+			justify-items: start;
+			text-align: start;
+		}
+	}
+
+	&__phone {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+}
