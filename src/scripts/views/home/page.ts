@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
-import { Scrollbar,  } from 'swiper/modules';
+import { Scrollbar } from 'swiper/modules';
+import { AccordionSE } from '@scripts/shared/lib/accordion-se';
 
 function initHomeScripts() {
 	new Swiper('#hero-slider', {
@@ -21,13 +22,18 @@ function initHomeScripts() {
 		slidesPerGroup: 1,
 		slidesPerView: 7,
 		centeredSlides: false,
-		slidesPerGroupSkip: 7 ,
+		slidesPerGroupSkip: 7,
 		spaceBetween: 32,
 		breakpoints: {
 			640: {
-				slidesPerGroup: 7,
+				slidesPerGroup: 7
 			}
 		}
+	});
+
+	new AccordionSE('.accordion-se', {
+		collapsedClass: 'opened',
+		shouldOpenAll: true
 	});
 }
 

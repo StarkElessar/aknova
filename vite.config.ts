@@ -4,6 +4,7 @@ import { defineConfig, type PluginOption } from 'vite';
 import nunjucksPlugin from 'vite-plugin-nunjucks';
 
 import common from './data/common.json';
+import faqAccordion from './data/faq-accordion.json';
 
 export default defineConfig(({ command }) => {
 	const templatesDir = resolve(__dirname, 'src/shared');
@@ -19,7 +20,8 @@ export default defineConfig(({ command }) => {
 		),
 		variables: {
 			'index.html': {
-				...common
+				...common,
+				...faqAccordion
 			}
 		}
 	});
