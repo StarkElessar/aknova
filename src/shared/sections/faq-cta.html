@@ -1,0 +1,30 @@
+{% from "components/advertising-block.html" import AdvertisingBlock %}
+
+<section class="faq-cta">
+	<div class="faq-cta__container container">
+		<h2 class="title title_3xl text-uppercase text-dark-blue faq-cta__title">
+			Отвечаем на часто задаваемые вопросы
+		</h2>
+		<div class="faq-cta__accordion accordion-se">
+			{% for item in faqAccordion %}
+			<div class="accordion-se__item">
+				<div class="accordion-se__header">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="11" y="24" width="24" height="2" transform="rotate(-90 11 24)" fill="currentColor"/>
+						<rect y="13" width="2" height="24" transform="rotate(-90 0 13)" fill="currentColor"/>
+					</svg>
+					<span class="title title_xs">{{ item.title }}</span>
+				</div>
+				<div class="accordion-se__body">
+					<div class="accordion-se__animation">
+						<div class="accordion-se__transform">
+							<p class="text-md">{{ item.description }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		{{ AdvertisingBlock("advertising-block_shadow faq-cta__advertising") }}
+	</div>
+</section>
