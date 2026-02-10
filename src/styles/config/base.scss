@@ -35,3 +35,14 @@
 		background-color: var(--color-grey-300);
 	}
 }
+
+.base-card {
+	background-color: var(--color-grey-100);
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--color-grey-400);
+	overflow: hidden;
+
+	&_shadow {
+		box-shadow: var(--shadow-default);
+	}
+}
