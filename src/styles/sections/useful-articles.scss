@@ -9,6 +9,14 @@
 		}
 	}
 
+	&__title {
+		text-align: center;
+
+		@media (width >= 640px) {
+			text-align: start;
+		}
+	}
+
 	&__slider {
 		margin: -36px;
 		padding: 36px;
