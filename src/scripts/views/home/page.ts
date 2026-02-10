@@ -52,6 +52,29 @@ function initHomeScripts() {
 		}
 	});
 
+	new Swiper('#reviews-swiper', {
+		modules: [Pagination, Navigation],
+		spaceBetween: 40,
+		centeredSlides: true,
+		initialSlide: 1,
+		navigation: {
+			nextEl: '[data-navigation="next"]',
+			prevEl: '[data-navigation="prev"]'
+		},
+		pagination: {
+			el: '.swiper-pagination'
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 'auto'
+			},
+			480: {
+				slidesPerView: 1.3
+			}
+		}
+	});
+
+
 	new AccordionSE('.accordion-se');
 }
 

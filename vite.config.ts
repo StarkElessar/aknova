@@ -6,6 +6,7 @@ import nunjucksPlugin from 'vite-plugin-nunjucks';
 import common from './data/common.json';
 import faqAccordion from './data/faq-accordion.json';
 import usefulArticles from './data/useful-articles.json';
+import reviews from './data/reviews.json';
 
 export default defineConfig(({ command }) => {
 	const templatesDir = resolve(__dirname, 'src/shared');
@@ -23,7 +24,8 @@ export default defineConfig(({ command }) => {
 			'index.html': {
 				...common,
 				...faqAccordion,
-				...usefulArticles
+				...usefulArticles,
+				...reviews
 			}
 		}
 	});

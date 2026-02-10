@@ -1,0 +1,57 @@
+.reviews {
+	&__container {
+		display: grid;
+		gap: 32px;
+
+		@media (width >= 640px) {
+			grid-template-columns: 1fr auto;
+			row-gap: 60px;
+		}
+	}
+
+	&__title {
+		text-align: center;
+
+		@media (width >= 640px) {
+			text-align: start;
+		}
+	}
+
+	&__slider {
+		margin: -36px;
+		padding: 36px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		@media (width >= 640px) {
+			grid-column: 1 / -1;
+			gap: 40px;
+		}
+	}
+
+	&__navigation {
+		align-self: center;
+	}
+
+	&__slide {
+		transition: padding-block .2s ease-in-out;
+
+		&:not(.swiper-slide-active) {
+			padding-block: 30px;
+		}
+	}
+
+	&__link {
+		@media (width >= 640px) {
+			grid-column: 2 / 3;
+			grid-row: 1 / 2;
+		}
+	}
+
+	&__card {
+		@media (width >= 640px) {
+			max-width: 392px;
+		}
+	}
+}
