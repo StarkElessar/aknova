@@ -90,7 +90,7 @@
 			&[data-level="3"] {
 				#{$this}__link {
 					font-size: 12px;
-					border-inline-start: 1px solid var(--color-blue-500);
+					border-inline-start: 1px solid var(--color-blue-400);
 
 					@media (any-hover: hover) {
 						&:hover {

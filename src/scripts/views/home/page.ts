@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Scrollbar } from 'swiper/modules';
+import { Scrollbar, Pagination, Navigation } from 'swiper/modules';
 import { AccordionSE } from '@scripts/shared/lib/accordion-se';
 
 function initHomeScripts() {
@@ -27,6 +27,27 @@ function initHomeScripts() {
 		breakpoints: {
 			640: {
 				slidesPerGroup: 7
+			}
+		}
+	});
+
+	new Swiper('#useful-articles-swiper', {
+		modules: [Pagination, Navigation],
+		spaceBetween: 40,
+		slidesPerView: 1,
+		navigation: {
+			nextEl: '[data-navigation="next"]',
+			prevEl: '[data-navigation="prev"]'
+		},
+		pagination: {
+			el: '.swiper-pagination'
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 'auto'
+			},
+			480: {
+				slidesPerView: 1.3
 			}
 		}
 	});
