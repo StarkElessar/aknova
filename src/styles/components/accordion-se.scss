@@ -78,9 +78,11 @@
 	&__transform {
 		transform: translateY(-100%);
 		visibility: hidden;
-		transition: transform .2s ease-in-out, visibility 0s .2s ease-in-out;
 		padding-block: 20px;
 		padding-inline: 54px 20px;
+		transition-property: transform, visibility, padding-block-start;
+		transition-duration: .2s;
+		transition-timing-function: ease-in-out;
 
 		@media (width >= 640px) {
 			padding-inline: 74px 40px;
