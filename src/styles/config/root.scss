@@ -10,10 +10,12 @@
 	--color-blue-900: #005bab;
 	--color-blue-700: #007bff;
 	--color-blue-600: #039be5;
-	--color-blue-500: #64ceff;
+	--color-blue-500: #53adcb;
+	--color-blue-400: #64ceff;
 	--color-red-700: #f2422c;
 
-	--shadow-default: 0 12px 80px #{rgba(#001856, 16%)};
+	--shadow-default: 0 4px 20px #{rgba(#001856, 10%)};
+	--shadow-sky: 0 12px 43px color-mix(in srgb, var(--color-blue-400), transparent 44%);
 
 	--gradient-primary: linear-gradient(
 			180deg,
