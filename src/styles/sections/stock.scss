@@ -1,0 +1,37 @@
+.stock {
+	&__container {
+		display: grid;
+		gap: 32px;
+
+		@media (width >= 640px) {
+			gap: 60px;
+		}
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__slider {
+		margin: -36px;
+		padding: 36px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		@media (width >= 640px) {
+			gap: 40px;
+		}
+	}
+
+	&__navigation {
+		align-self: center;
+	}
+
+	&__link {
+		@media (width >= 640px) {
+			max-width: max-content;
+			margin-inline: auto;
+		}
+	}
+}
