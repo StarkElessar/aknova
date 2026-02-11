@@ -1,0 +1,17 @@
+.accessories {
+	&__title {
+		text-align: center;
+		margin-block-end: 32px;
+
+		@media (width >= 640px) {
+			text-align: start;
+			margin-block-end: 60px;
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 32px;
+	}
+}
