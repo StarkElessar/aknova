@@ -35,10 +35,12 @@
 	}
 
 	&__slide {
-		transition: padding-block .2s ease-in-out;
+		@media (width >= 640px) {
+			transition: padding-block .2s ease-in-out;
 
-		&:not(.swiper-slide-active) {
-			padding-block: 30px;
+			&:not(.swiper-slide-active) {
+				padding-block: 30px;
+			}
 		}
 	}
 
