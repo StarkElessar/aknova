@@ -1,0 +1,37 @@
+.services {
+	&__container {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 24px;
+
+		@media (width >= 640px) {
+			gap: 60px;
+		}
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__slider {
+		margin: -36px -28px;
+		padding: 36px 28px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		@media (width >= 640px) {
+			gap: 40px;
+		}
+	}
+
+	.service-card {
+		@media (width >= 640px) {
+			//max-width: 300px;
+		}
+	}
+
+	&__navigation {
+		align-self: center;
+	}
+}

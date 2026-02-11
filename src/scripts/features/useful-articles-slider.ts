@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation,Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 export function initUsefulArticlesSlider(selector: string = '#useful-articles-swiper') {
 	const swiperElement = document.querySelector(selector);

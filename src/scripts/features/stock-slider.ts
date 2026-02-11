@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation,Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 interface StockSliderConfig {
 	selector?: string;

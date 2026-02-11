@@ -1,0 +1,19 @@
+.video-right-windows {
+	&__title {
+		text-align: center;
+		margin-block-end: 24px;
+
+		@media (width >= 640px) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__iframe {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+	}
+}
