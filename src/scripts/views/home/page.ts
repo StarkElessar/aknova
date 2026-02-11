@@ -65,8 +65,11 @@ function initHomeScripts() {
 			el: '.swiper-pagination'
 		},
 		breakpoints: {
+			1240: {
+				slidesPerView: 3,
+			},
 			640: {
-				slidesPerView: 'auto'
+				slidesPerView: 1.5
 			},
 			480: {
 				slidesPerView: 1.3

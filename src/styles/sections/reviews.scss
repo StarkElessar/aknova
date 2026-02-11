@@ -36,10 +36,16 @@
 
 	&__slide {
 		@media (width >= 640px) {
-			transition: padding-block .2s ease-in-out;
+			transition-property: opacity, padding-block;
+			transition-timing-function: ease-in-out;
+			transition-duration: .2s;
 
 			&:not(.swiper-slide-active) {
 				padding-block: 30px;
+			}
+
+			&:not(.swiper-slide-active, .swiper-slide-prev, .swiper-slide-next) {
+				opacity: 0;
 			}
 		}
 	}
@@ -48,12 +54,6 @@
 		@media (width >= 640px) {
 			grid-column: 2 / 3;
 			grid-row: 1 / 2;
-		}
-	}
-
-	&__card {
-		@media (width >= 640px) {
-			max-width: 392px;
 		}
 	}
 }
