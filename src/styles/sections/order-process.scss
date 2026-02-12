@@ -1,0 +1,119 @@
+.order-process {
+	&__container {
+		display: grid;
+		gap: 24px;
+
+		@media (width >= 640px) {
+			gap: 32px;
+		}
+	}
+
+	&__title {
+		text-align: center;
+		margin-block-end: 8px;
+
+		@media (width >= 640px) {
+			margin-block-end: 28px;
+		}
+	}
+
+	&__steps {
+		display: flex;
+		flex-wrap: wrap;
+
+		gap: 24px;
+
+		@media (width >= 640px) {
+			gap: 32px;
+		}
+
+		> * {
+			flex: 1 1 100%;
+			padding: 24px;
+			display: grid;
+			grid-template-columns: 1fr 70px;
+			gap: 10px;
+
+			@media (width >= 480px) {
+				flex-basis: 31.5%;
+			}
+
+			@media (width >= 640px) {
+				padding: 32px;
+			}
+
+			span {
+				align-self: start;
+				text-wrap: nowrap;
+				padding: 4px 12px;
+				border-radius: var(--radius-2xl);
+				background-color: color-mix(in srgb, var(--color-blue-400), transparent 85%);
+			}
+
+			> * {
+				&:nth-child(3) {
+					margin-block-start: 20px;
+					grid-row: 2 / 3;
+					grid-column: 1 / -1;
+				}
+
+				&:nth-child(4) {
+					grid-row: 3 / 4;
+					grid-column: 1 / -1;
+				}
+			}
+		}
+	}
+
+	&__cta {
+		display: grid;
+		gap: 16px;
+		background-color: var(--color-blue-900);
+		border-radius: var(--radius-lg);
+		padding: 24px;
+
+		@media (width >= 1280px) {
+			align-items: center;
+			grid-template-columns: 5.35fr auto 4.6fr;
+			column-gap: 48px;
+		}
+
+		> * {
+			display: grid;
+			gap: 16px;
+			justify-items: center;
+			text-align: center;
+
+			@media (width >= 640px) {
+				display: grid;
+				justify-items: normal;
+				text-align: start;
+				align-items: center;
+				gap: 24px;
+				grid-template-columns: 6fr minmax(245px, 4fr);
+			}
+
+			@media (width >= 1280px) {
+				grid-template-columns: minmax(auto, 335px) 245px;
+			}
+		}
+	}
+
+	// TODO: не забыть номер прижать к правому краю на планшете
+	&__phone {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__line {
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-grey-400);
+
+		@media (width >= 1280px) {
+			width: 2px;
+			height: 100%;
+		}
+	}
+}
