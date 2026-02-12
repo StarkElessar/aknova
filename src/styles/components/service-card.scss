@@ -1,6 +1,7 @@
 .service-card {
 	width: 100%;
 	container-type: inline-size;
+	display: flex;
 
 	&__inner {
 		display: flex;
@@ -28,10 +29,12 @@
 	}
 
 	&__content {
-		padding: 24px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
 
 		@media (width >= 640px) {
-			padding: 32px;
+			padding: 30px;
 		}
 	}
 
@@ -45,6 +48,7 @@
 		overflow: hidden;
 		-webkit-box-orient: block-axis;
 		-webkit-line-clamp: 5;
+		flex-grow: 1;
 
 		&:not(:last-child) {
 			margin-block-end: 24px;
