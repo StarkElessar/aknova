@@ -20,6 +20,7 @@
 .section-group {
 	--space: 60px;
 	display: grid;
+	grid-template-columns: 100%;
 	gap: var(--space);
 	padding-block: var(--space);
 

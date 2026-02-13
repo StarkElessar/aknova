@@ -96,19 +96,29 @@
 
 .swiper-pagination {
 	display: flex;
-	gap: 8px;
+
 
 	&.swiper-pagination-horizontal {
 		flex-direction: row;
+		align-items: center;
+	}
+
+	&.swiper-pagination-bullets-dynamic {
+		overflow: hidden;
 	}
 }
 
 .swiper-pagination-bullet {
+	position: relative;
 	width: 8px;
-	aspect-ratio: 1;
+	height: 8px;
+	margin-inline: 8px;
+	flex-shrink: 0;
 	border-radius: 50%;
 	background-color: color-mix(in srgb, var(--color-grey-600), transparent 70%);
-	transition: background-color .2s ease-in-out;
+	transition-property: background-color, left, width, height;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
 
 	&.swiper-pagination-bullet-active {
 		background-color: var(--color-blue-900);
