@@ -1,0 +1,136 @@
+.about {
+	&__container {
+		display: grid;
+		gap: 32px;
+
+		@media (width >= 960px) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__title {
+		text-align: center;
+
+		@media (width >= 960px) {
+			grid-column: 1/3;
+		}
+	}
+
+	&__content {
+		display: grid;
+		gap: 24px;
+
+		@media (width >= 960px) {
+			gap: 32px;
+		}
+	}
+
+	&__text {
+		display: grid;
+		gap: 20px;
+	}
+
+	&__statistic {
+		@media (width >= 960px) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
+		}
+
+		h4 {
+			@media (width >= 960px) {
+				grid-column: 1/3;
+			}
+		}
+
+		img {
+			margin-block: 20px;
+
+			@media (width >= 960px) {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+	}
+
+	&__card {
+		border-bottom-left-radius: var(--radius-lg);
+		border-bottom-right-radius: var(--radius-lg);
+	}
+
+	&__info {
+		border-top-left-radius: var(--radius-lg);
+		border-top-right-radius: var(--radius-lg);
+		padding-inline: 24px;
+		padding-block: 24px 74px;
+		background-color: var(--color-blue-900);
+		position: relative;
+
+		p {
+			margin-bottom: 40px;
+
+			@media (width >= 960px) {
+				margin-bottom: 24px;
+				width: 60%;
+			}
+		}
+
+		img {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+
+			@media (width >= 960px) {
+				width: auto;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__cta {
+		padding: 24px;
+		display: grid;
+		gap: 32px;
+
+		> div:nth-child(1) {
+			display: grid;
+			justify-items: center;
+			gap: 24px;
+			text-align: center;
+
+			@media (width >= 960px) {
+				grid-auto-flow: column;
+				gap: 15px;
+				text-align: left;
+			}
+		}
+
+		> div:nth-child(2) {
+			display: grid;
+			gap: 16px;
+			text-align: center;
+
+			@media (width >= 960px) {
+				grid-auto-flow: column;
+				align-items: center;
+			}
+		}
+	}
+
+	&__link {
+		text-decoration: underline;
+	}
+
+	&__phone {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		gap: 16px;
+
+		@media (width >= 960px) {
+			width: max-content;
+		}
+	}
+}
