@@ -99,10 +99,10 @@
 		}
 	}
 
-	// TODO: не забыть номер прижать к правому краю на планшете
 	&__phone {
 		display: flex;
 		align-items: center;
+		justify-content: end;
 		gap: 16px;
 	}
 
