@@ -70,6 +70,7 @@
 		gap: 16px;
 		background-color: var(--color-blue-900);
 		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-default);
 		padding: 24px;
 
 		@media (width >= 1280px) {
