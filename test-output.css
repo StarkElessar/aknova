@@ -1,21 +1,27 @@
 .test-gallery img:nth-child(1) {
-  grid-area: a;
+	grid-area: a;
 }
+
 .test-gallery img:nth-child(2) {
-  grid-area: b;
+	grid-area: b;
 }
+
 .test-gallery img:nth-child(3) {
-  grid-area: c;
+	grid-area: c;
 }
+
 .test-gallery img:nth-child(4) {
-  grid-area: d;
+	grid-area: d;
 }
+
 .test-gallery img:nth-child(5) {
-  grid-area: e;
+	grid-area: e;
 }
+
 .test-gallery img:nth-child(6) {
-  grid-area: f;
+	grid-area: f;
 }
+
 .test-gallery img:nth-child(7) {
-  grid-area: g;
+	grid-area: g;
 }

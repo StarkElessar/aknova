@@ -1,6 +1,7 @@
 import Swiper from 'swiper';
-import type { SwiperOptions } from 'swiper/types';
 import { Navigation, Pagination } from 'swiper/modules';
+
+import type { SwiperOptions } from 'swiper/types';
 
 export function initHowWeDoSlider() {
 	const navigation = document.querySelector<HTMLElement>('.how-we-do__navigation');

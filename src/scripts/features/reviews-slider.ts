@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Navigation,Pagination } from 'swiper/modules';
 
 export function initReviewsSlider(selector: string = '#reviews-swiper') {
 	const swiperElement = document.querySelector(selector);

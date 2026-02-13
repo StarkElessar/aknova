@@ -37,6 +37,7 @@ initHeroSlider('#custom-hero-slider');
 ## Зависимости
 
 Все слайдеры используют библиотеку Swiper с соответствующими модулями:
+
 - `Scrollbar` - для прокрутки
 - `Pagination` - для пагинации
 - `Navigation` - для навигации
