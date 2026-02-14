@@ -3,7 +3,7 @@ import { type IPopupEventData,PopupManager } from '@scripts/shared/lib/popup';
 export function initPopupTitleHandler() {
 	const popup = PopupManager.get('request-call-popup');
 	const element = popup?.getElement();
-	const titleElement = element?.querySelector('.popup__title');
+	const titleElement = element?.querySelector('[data-popup-title]');
 
 	if (titleElement) {
 		const originalTitle = titleElement.textContent;

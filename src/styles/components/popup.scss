@@ -19,6 +19,7 @@
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
+		padding-inline-end: var(--scrollbar-width);
 
 		#{$this}__body {
 			transform: translateY(0);
@@ -43,6 +44,26 @@
 		transition-property: opacity, transform;
 		transition-timing-function: ease-in-out;
 		transition-duration: var(--popup-animation-duration, 0.3s);
+	}
+
+	&__close {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		display: grid;
+		place-content: center;
+		border-radius: var(--radius-xs);
+		transition: background-color var(--transition-default);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba(#000, 3%);
+			}
+
+			&:active {
+				background-color: rgba(#000, 6%);
+			}
+		}
 	}
 }
 

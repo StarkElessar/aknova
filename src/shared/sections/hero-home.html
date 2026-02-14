@@ -3,9 +3,11 @@
 	<div class="hero-home__container container">
 		<h1 class="hero-home__title title title_4xl text-white text-uppercase">Наши окна прослужат вам дольше других!</h1>
 
-		<form class="hero-home__form">
-			<fieldset>
-				<input type="text" placeholder="Введите ваш номер телефона" class="input input_lg input_smoke" />
+		<form class="hero-home__form" id="hero-form" action="#">
+			<fieldset class="form-field" data-error-message="Поле обязательно для заполнения">
+				<input type="tel" placeholder="Введите ваш номер телефона"
+				       data-mask="phone"
+				       class="input input_lg input_smoke" data-required>
 			</fieldset>
 
 			<button type="submit" class="btn btn_lg btn_gradient btn_full">Вызвать замерщика</button>

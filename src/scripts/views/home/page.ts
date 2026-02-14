@@ -7,6 +7,7 @@ import { initReviewsSlider } from '@scripts/features/reviews-slider';
 import { initServicesSlider } from '@scripts/features/services-slider';
 import { initStockSlider } from '@scripts/features/stock-slider';
 import { initUsefulArticlesSlider } from '@scripts/features/useful-articles-slider';
+import { formHandler } from '@scripts/shared/lib/form-handler';
 
 function initHomeScripts() {
 	initHeroSlider();
@@ -18,6 +19,9 @@ function initHomeScripts() {
 	initStockSlider();
 
 	new AccordionSE('.accordion-se');
+
+	formHandler({ formId: 'hero-form' });
+	formHandler({ formId: 'call-request-cta-form' });
 }
 
 document.addEventListener('DOMContentLoaded', initHomeScripts);

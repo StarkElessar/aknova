@@ -6,10 +6,14 @@
 				<p class="text-lg">Оставьте ваш номер телефона и замерщик приедет к вам совершенно бесплатно!</p>
 			</div>
 
-			<form class="call-request-cta__form">
+			<form class="call-request-cta__form" id="call-request-cta-form" action="#">
 				<div class="call-request-cta__form-group">
 					<input type="text" class="input input_lg input_white" placeholder="Ваше имя" />
-					<input type="text" class="input input_lg input_white" placeholder="Ваш телефон" />
+					<fieldset class="form-field" data-error-message="Поле обязательно для заполнения">
+						<input type="tel" class="input input_lg input_white"
+						       data-mask="phone"
+						       data-required placeholder="Ваш телефон" />
+					</fieldset>
 				</div>
 
 				<div class="call-request-cta__form-group">
