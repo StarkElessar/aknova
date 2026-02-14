@@ -13,7 +13,7 @@
 	border-block-start: 1px solid var(--color-grey-400);
 	opacity: 0;
 
-	.burger-menu-opened & {
+	.burger-menu-opened {
 		width: calc(100% - var(--scrollbar-width));
 		top: var(--header-height);
 		opacity: 1;
@@ -45,7 +45,7 @@
 			padding: 0;
 		}
 
-		.burger-menu-opened & {
+		.burger-menu-opened {
 			ul {
 				padding-inline-start: 16px;
 			}

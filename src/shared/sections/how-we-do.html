@@ -7,9 +7,9 @@
 			<div class="swiper-wrapper">
 				{% for img in range(21) %} {% set imgNum = img + 1 %} {% set imgExt = 'jpg' if imgNum <= 7 else 'png' %} {% set
 				imgNumFormatted = ('0' + imgNum|string) if imgNum < 10 else imgNum|string %}
-				<div class="swiper-slide">
+				<a href="/images/how-we-do/{{ imgNumFormatted }}.{{ imgExt }}" data-fancybox="seo-gallery" class="swiper-slide">
 					<img src="/images/how-we-do/{{ imgNumFormatted }}.{{ imgExt }}" alt="Пример работы {{ imgNum }}" />
-				</div>
+				</a>
 				{% endfor %}
 			</div>
 		</div>
@@ -21,7 +21,9 @@
 					<div class="how-we-do__gallery">
 						{% for img in range(7) %} {% set imgNum = slide * 7 + img + 1 %} {% set imgExt = 'jpg' if imgNum <= 7 else 'png' %}
 						{% set imgNumFormatted = ('0' + imgNum|string) if imgNum < 10 else imgNum|string %}
-						<img src="/images/how-we-do/{{ imgNumFormatted }}.{{ imgExt }}" alt="Пример работы {{ imgNum }}" />
+						<a href="/images/how-we-do/{{ imgNumFormatted }}.{{ imgExt }}" data-fancybox="seo-gallery">
+							<img src="/images/how-we-do/{{ imgNumFormatted }}.{{ imgExt }}" alt="Пример работы {{ imgNum }}" />
+						</a>
 						{% endfor %}
 					</div>
 				</div>

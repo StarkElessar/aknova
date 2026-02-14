@@ -1,6 +1,24 @@
 .our-offers-card {
+	flex-grow: 1;
+
 	&:not(&_big) {
 		max-width: 400px;
+	}
+
+	&_big {
+		max-width: 400px;
+
+		@media (width >= 768px) {
+			max-width: 100%;
+		}
+
+		img {
+			height: 94px;
+
+			@media (width >= 768px) {
+				height: auto;
+			}
+		}
 	}
 
 	&__image {
@@ -9,6 +27,7 @@
 		place-content: center;
 		padding-inline: 24px;
 		background-image: url("/images/our-offers/bg.png");
+		background-color: var(--color-grey-200);
 		background-repeat: repeat;
 		background-size: cover;
 
@@ -39,6 +58,35 @@
 	&__description {
 		flex-grow: 1;
 		margin-block-end: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
+	&__tooltip {
+		width: 35px;
+		aspect-ratio: 1;
+		display: grid;
+		place-content: center;
+		border-radius: 50%;
+		background-color: var(--color-grey-100);
+		box-shadow: var(--shadow-sky);
+		cursor: default;
+
+		&-content {
+			display: grid;
+
+			span {
+				padding: 4px 8px;
+
+				&:nth-child(1) {
+					font-weight: 600;
+					background-color: var(--color-grey-400);
+					border-block-end: 1px solid #eee;
+				}
+			}
+		}
 	}
 
 	&__footer {
