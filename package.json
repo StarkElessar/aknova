@@ -39,6 +39,8 @@
 	},
 	"dependencies": {
 		"swiper": "^12.1.0"
+		"swiper": "^12.1.0",
+		"tippy.js": "^6.3.7"
 	},
 	"browserslist": [
 		"defaults",

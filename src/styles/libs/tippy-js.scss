@@ -1,0 +1,19 @@
+@use "tippy.js/dist/tippy.css";
+
+.tippy-box {
+	background-color: var(--color-grey-100);
+	box-shadow: var(--shadow-default);
+}
+
+.tippy-content {
+	color: var(--color-grey-900);
+	font-weight: 400;
+	font-size: 14px;
+	padding: 0;
+	border-radius: var(--radius-xs);
+	overflow: hidden;
+}
+
+.tippy-arrow {
+	color: var(--color-grey-4);
+}
