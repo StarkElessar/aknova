@@ -48,6 +48,16 @@
 	}
 }
 
+.star {
+	display: inline-flex;
+	width: 20px;
+	height: 20px;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffb400' viewBox='0 0 18 18'%3E%3Cpath d='M9,0L6.563,6.095L0,6.539l5.04,4.219l-1.594,6.352L9,13.617l5.555,3.492l-1.594-6.352L18,6.539l-6.563-0.444L9,0z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 20px 20px;
+}
+
 [data-tabs=item] {
 	&:not(.active) {
 		display: none;

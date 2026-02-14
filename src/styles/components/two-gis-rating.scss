@@ -1,0 +1,32 @@
+.rating {
+	display: grid;
+	max-width: max-content;
+	gap: 10px;
+	transition: opacity var(--transition-default);
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--color-grey-100);
+			opacity: .6;
+		}
+	}
+
+	img {
+		border-radius: var(--radius-xs);
+		object-fit: cover;
+	}
+
+	&__top {
+		gap: 10px;
+
+		&,
+		div {
+			display: flex;
+			align-items: center;
+		}
+
+		div {
+			gap: 4px;
+		}
+	}
+}

@@ -37,10 +37,18 @@
 		display: grid;
 		align-items: center;
 		gap: 16px;
-		margin-block-end: 165px;
+		margin-block-end: 40px;
 
 		@media (width >= 640px) {
 			grid-template-columns: 1fr 260px;
+		}
+	}
+
+	&__rating {
+		margin-block-end: 55px;
+
+		@media (width >= 640px) {
+			margin-block-end: 64px;
 		}
 	}
 
@@ -54,6 +62,6 @@
 
 	&__slider {
 		display: grid;
-		padding-block-end: 28px;
+		gap: 28px;
 	}
 }
