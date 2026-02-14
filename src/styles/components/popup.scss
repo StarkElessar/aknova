@@ -14,10 +14,8 @@
 	transition-property: opacity, visibility;
 	transition-timing-function: ease-in-out;
 	transition-duration: var(--popup-animation-duration, 0.3s);
-	display: none;
 
 	&.popup_opened {
-		display: block;
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;

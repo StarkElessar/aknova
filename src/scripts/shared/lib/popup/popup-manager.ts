@@ -10,39 +10,36 @@ import { generateId, getDataAttributes } from './utils';
 import type { IPopupConfig, IPopupEventData,ITriggerConfig } from './types';
 
 export class PopupManager {
-	private static instance: PopupManager | null = null;
-	private popups: Map<string, PopupInstance>;
-	private triggers: Map<HTMLElement, ITriggerConfig>;
-	private openedStack: PopupInstance[];
-	private isInitialized: boolean;
+	private static _instance: PopupManager | null = null;
+	private _popups: Map<string, PopupInstance>;
+	private _triggers: Map<HTMLElement, ITriggerConfig>;
+	private _openedStack: PopupInstance[];
+	private _isInitialized: boolean;
 
 	private constructor() {
-		this.popups = new Map();
-		this.triggers = new Map();
-		this.openedStack = [];
-		this.isInitialized = false;
+		this._popups = new Map();
+		this._triggers = new Map();
+		this._openedStack = [];
+		this._isInitialized = false;
 	}
 
 	public static getInstance(): PopupManager {
-		if (!PopupManager.instance) {
-			PopupManager.instance = new PopupManager();
-		}
-		return PopupManager.instance;
+		return PopupManager._instance ??= new PopupManager();
 	}
 
 	public static init(): void {
 		const manager = PopupManager.getInstance();
-		if (manager.isInitialized) return;
+		if (manager._isInitialized) return;
 
 		manager.scanDOM();
-		manager.isInitialized = true;
+		manager._isInitialized = true;
 	}
 
 	public static register(config: IPopupConfig): PopupInstance {
 		const manager = PopupManager.getInstance();
 		const popup = new PopupInstance(config);
 
-		manager.popups.set(config.id, popup);
+		manager._popups.set(config.id, popup);
 
 		popup.on(EVENT_OPEN, () => manager.handlePopupOpen(popup));
 		popup.on(EVENT_CLOSE, () => manager.handlePopupClose(popup));
@@ -52,7 +49,7 @@ export class PopupManager {
 
 	public static registerTrigger(config: ITriggerConfig): void {
 		const manager = PopupManager.getInstance();
-		manager.triggers.set(config.element, config);
+		manager._triggers.set(config.element, config);
 
 		config.element.addEventListener('click', (event) => {
 			event.preventDefault();
@@ -62,70 +59,61 @@ export class PopupManager {
 
 	public static unregister(popupId: string): void {
 		const manager = PopupManager.getInstance();
-		const popup = manager.popups.get(popupId);
+		const popup = manager._popups.get(popupId);
 
 		if (popup) {
 			popup.destroy();
-			manager.popups.delete(popupId);
+			manager._popups.delete(popupId);
 		}
 	}
 
 	public static unregisterTrigger(element: HTMLElement): void {
 		const manager = PopupManager.getInstance();
-		manager.triggers.delete(element);
+		manager._triggers.delete(element);
 	}
 
 	public static open(popupId: string, trigger?: HTMLElement): void {
 		const manager = PopupManager.getInstance();
-		const popup = manager.popups.get(popupId);
-
-		if (popup) {
-			popup.open(trigger);
-		}
+		const popup = manager._popups.get(popupId);
+		popup?.open(trigger);
 	}
 
 	public static close(popupId: string): void {
 		const manager = PopupManager.getInstance();
-		const popup = manager.popups.get(popupId);
-
-		if (popup) {
-			popup.close();
-		}
+		const popup = manager._popups.get(popupId);
+		popup?.close();
 	}
 
 	public static closeLast(): void {
 		const manager = PopupManager.getInstance();
-		const lastPopup = manager.openedStack[manager.openedStack.length - 1];
-
-		if (lastPopup) {
-			lastPopup.close();
-		}
+		const lastPopup = manager._openedStack[manager._openedStack.length - 1];
+		lastPopup?.close();
 	}
 
 	public static closeAll(): void {
 		const manager = PopupManager.getInstance();
-		[...manager.openedStack].forEach((popup) => popup.close());
+		[...manager._openedStack].forEach((popup) => popup.close());
 	}
 
 	public static get(popupId: string): PopupInstance | undefined {
 		const manager = PopupManager.getInstance();
-		return manager.popups.get(popupId);
+		return manager._popups.get(popupId);
 	}
 
 	public static getAll(): PopupInstance[] {
 		const manager = PopupManager.getInstance();
-		return Array.from(manager.popups.values());
+		return [...manager._popups.values()];
 	}
 
 	public static getOpened(): PopupInstance[] {
 		const manager = PopupManager.getInstance();
-		return [...manager.openedStack];
+		return [...manager._openedStack];
 	}
 
 	public static isOpened(popupId: string): boolean {
 		const manager = PopupManager.getInstance();
-		const popup = manager.popups.get(popupId);
-		return popup ? popup.isOpen() : false;
+		const popup = manager._popups.get(popupId);
+		return popup?.isOpen() ?? false;
 	}
 
 	private scanDOM(): void {
@@ -134,11 +122,11 @@ export class PopupManager {
 	}
 
 	private findPopups(): HTMLElement[] {
-		return Array.from(document.querySelectorAll(`.${POPUP_CLASS}`));
+		return [...document.querySelectorAll<HTMLElement>(`.${POPUP_CLASS}`)];
 	}
 
 	private findTriggers(): HTMLElement[] {
-		return Array.from(document.querySelectorAll(`[${DATA_POPUP_ID}]`));
+		return [...document.querySelectorAll<HTMLElement>(`[${DATA_POPUP_ID}]`)];
 	}
 
 	private autoRegisterPopups(): void {
@@ -146,12 +134,9 @@ export class PopupManager {
 
 		popupElements.forEach((element) => {
 			const id = element.id || generateId();
+			element.id ||= id;
 
-			if (!element.id) {
-				element.id = id;
-			}
-
-			if (!this.popups.has(id)) {
+			if (!this._popups.has(id)) {
 				PopupManager.register({
 					id,
 					element,
@@ -166,7 +151,7 @@ export class PopupManager {
 		triggerElements.forEach((element) => {
 			const popupId = element.getAttribute(DATA_POPUP_ID);
 
-			if (popupId && !this.triggers.has(element)) {
+			if (popupId && !this._triggers.has(element)) {
 				PopupManager.registerTrigger({
 					element,
 					popupId,
@@ -176,7 +161,7 @@ export class PopupManager {
 	}
 
 	private handleTriggerClick(config: ITriggerConfig): void {
-		const popup = this.popups.get(config.popupId);
+		const popup = this._popups.get(config.popupId);
 
 		if (!popup) return;
 
@@ -195,9 +180,7 @@ export class PopupManager {
 		popup.open(config.element);
 
 		if (config.onOpen) {
-			popup.once(EVENT_OPEN, () => {
-				config.onOpen!(eventData);
-			});
+			popup.once(EVENT_OPEN, () => config.onOpen?.(eventData));
 		}
 	}
 
@@ -210,15 +193,14 @@ export class PopupManager {
 	}
 
 	private addToStack(popup: PopupInstance): void {
-		if (!this.openedStack.includes(popup)) {
-			this.openedStack.push(popup);
+		if (!this._openedStack.includes(popup)) {
+			this._openedStack.push(popup);
 		}
 	}
 
 	private removeFromStack(popup: PopupInstance): void {
-		const index = this.openedStack.indexOf(popup);
-		if (index > -1) {
-			this.openedStack.splice(index, 1);
-		}
+		const index = this._openedStack.indexOf(popup);
+		if (index === -1) return;
+		this._openedStack.splice(index, 1);
 	}
 }

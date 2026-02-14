@@ -1,29 +1,29 @@
 export class EventEmitter {
-	private listeners: Map<string, Set<Function>>;
+	private _listeners: Map<string, Set<Function>>;
 
 	constructor() {
-		this.listeners = new Map();
+		this._listeners = new Map();
 	}
 
 	on(event: string, callback: Function): void {
-		if (!this.listeners.has(event)) {
-			this.listeners.set(event, new Set());
+		if (!this._listeners.has(event)) {
+			this._listeners.set(event, new Set());
 		}
-		this.listeners.get(event)!.add(callback);
+		this._listeners.get(event)?.add(callback);
 	}
 
 	off(event: string, callback: Function): void {
-		const eventListeners = this.listeners.get(event);
+		const eventListeners = this._listeners.get(event);
 		if (eventListeners) {
 			eventListeners.delete(callback);
 			if (eventListeners.size === 0) {
-				this.listeners.delete(event);
+				this._listeners.delete(event);
 			}
 		}
 	}
 
 	emit(event: string, data?: any): void {
-		const eventListeners = this.listeners.get(event);
+		const eventListeners = this._listeners.get(event);
 		if (eventListeners) {
 			eventListeners.forEach((callback) => {
 				callback(data);
@@ -40,6 +40,6 @@ export class EventEmitter {
 	}
 
 	clear(): void {
-		this.listeners.clear();
+		this._listeners.clear();
 	}
 }

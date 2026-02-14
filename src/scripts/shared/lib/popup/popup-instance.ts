@@ -16,91 +16,92 @@ import { getDataAttributes } from './utils';
 import type { IPopupConfig, IPopupEventData } from './types';
 
 export class PopupInstance extends EventEmitter {
-	private readonly id: string;
-	private readonly element: HTMLElement;
-	private config: IPopupConfig;
-	private isOpened: boolean;
-	private overlayElement: HTMLElement | null;
-	private closeButtons: HTMLElement[];
-	private currentTrigger: HTMLElement | null;
-	private currentTriggerData: Record<string, string> | null;
-	private escapeHandler: ((event: KeyboardEvent) => void) | null;
+	private readonly _id: string;
+	private readonly _element: HTMLElement;
+	private _config: IPopupConfig;
+	private _isOpened: boolean;
+	private _overlayElement: HTMLElement | null;
+	private _closeButtons: HTMLElement[];
+	private _currentTrigger: HTMLElement | null;
+	private _currentTriggerData: Record<string, string> | null;
+	private _escapeHandler: ((event: KeyboardEvent) => void) | null;
 
 	constructor(config: IPopupConfig) {
 		super();
 
-		this.id = config.id;
-		this.element = config.element;
-		this.config = {
+		this._id = config.id;
+		this._element = config.element;
+		this._config = {
 			closeOnOverlay: true,
 			closeOnEscape: true,
 			lockBody: true,
 			animationDuration: ANIMATION_DURATION,
 			...config
 		};
-		this.isOpened = false;
-		this.overlayElement = null;
-		this.closeButtons = [];
-		this.currentTrigger = null;
-		this.currentTriggerData = null;
-		this.escapeHandler = null;
+		this._isOpened = false;
+		this._overlayElement = null;
+		this._closeButtons = [];
+		this._currentTrigger = null;
+		this._currentTriggerData = null;
+		this._escapeHandler = null;
 
 		this.init();
 	}
 
 	public open(trigger?: HTMLElement): void {
-		if (this.isOpened) {
+		if (this._isOpened) {
 			return;
 		}
 
-		this.currentTrigger = trigger || null;
+		this._currentTrigger = trigger || null;
 		this.saveTriggerData(trigger);
 
 		const eventData: IPopupEventData = {
 			popup: this,
-			trigger: this.currentTrigger,
-			triggerData: this.currentTriggerData
+			trigger: this._currentTrigger,
+			triggerData: this._currentTriggerData
 		};
 
 		this.emit(EVENT_BEFORE_OPEN, eventData);
 
-		this.isOpened = true;
+		this._isOpened = true;
 		this.addOpenedClass();
 
-		if (this.config.lockBody) {
+		if (this._config.lockBody) {
 			this.lockPage();
 		}
 
-		if (this.config.closeOnEscape) {
+		if (this._config.closeOnEscape) {
 			this.bindEscapeHandler();
 		}
 
-		setTimeout(() => {
-			this.emit(EVENT_OPEN, eventData);
-		}, this.config.animationDuration);
+		setTimeout(
+			() => this.emit(EVENT_OPEN, eventData),
+			this._config.animationDuration
+		);
 	}
 
 	public close(): void {
-		if (!this.isOpened) {
+		if (!this._isOpened) {
 			return;
 		}
 
 		const eventData: IPopupEventData = {
 			popup: this,
-			trigger: this.currentTrigger,
-			triggerData: this.currentTriggerData
+			trigger: this._currentTrigger,
+			triggerData: this._currentTriggerData
 		};
 
 		this.emit(EVENT_BEFORE_CLOSE, eventData);
 
-		this.isOpened = false;
+		this._isOpened = false;
 		this.removeOpenedClass();
 
-		if (this.config.lockBody) {
+		if (this._config.lockBody) {
 			this.unlockPage();
 		}
 
-		if (this.escapeHandler) {
+		if (this._escapeHandler) {
 			this.unbindEscapeHandler();
 		}
 
@@ -109,42 +110,42 @@ export class PopupInstance extends EventEmitter {
 				this.clearTriggerData();
 				this.emit(EVENT_CLOSE, eventData);
 			},
-			this.config.animationDuration
+			this._config.animationDuration
 		);
 	}
 
 	public isOpen(): boolean {
-		return this.isOpened;
+		return this._isOpened;
 	}
 
 	public getId(): string {
-		return this.id;
+		return this._id;
 	}
 
 	public getElement(): HTMLElement {
-		return this.element;
+		return this._element;
 	}
 
 	public getCurrentTrigger(): HTMLElement | null {
-		return this.currentTrigger;
+		return this._currentTrigger;
 	}
 
 	public getTriggerData(): Record<string, string> | null {
-		return this.currentTriggerData;
+		return this._currentTriggerData;
 	}
 
 	public destroy(): void {
-		if (this.isOpened) {
+		if (this._isOpened) {
 			this.close();
 		}
 
 		this.unbindEvents();
 		this.clear();
 
-		this.overlayElement = null;
-		this.closeButtons = [];
-		this.currentTrigger = null;
-		this.currentTriggerData = null;
+		this._overlayElement = null;
+		this._closeButtons = [];
+		this._currentTrigger = null;
+		this._currentTriggerData = null;
 	}
 
 	private init(): void {
@@ -153,30 +154,30 @@ export class PopupInstance extends EventEmitter {
 	}
 
 	private findElements(): void {
-		this.overlayElement = this.element.querySelector<HTMLElement>(`[${DATA_CLOSE_OVERLAY}]`);
-		this.closeButtons = [...this.element.querySelectorAll<HTMLElement>(`[${DATA_CLOSE_BUTTON}]`)];
+		this._overlayElement = this._element.querySelector<HTMLElement>(`[${DATA_CLOSE_OVERLAY}]`);
+		this._closeButtons = [...this._element.querySelectorAll<HTMLElement>(`[${DATA_CLOSE_BUTTON}]`)];
 	}
 
 	private bindEvents(): void {
-		if (this.config.closeOnOverlay && this.overlayElement) {
-			this.overlayElement.addEventListener('click', this.handleOverlayClick);
+		if (this._config.closeOnOverlay && this._overlayElement) {
+			this._overlayElement.addEventListener('click', this.handleOverlayClick);
 		}
 
-		this.closeButtons.forEach((button) => {
+		this._closeButtons.forEach((button) => {
 			button.addEventListener('click', this.handleCloseButtonClick);
 		});
 	}
 
 	private unbindEvents(): void {
-		this.overlayElement?.removeEventListener('click', this.handleOverlayClick);
+		this._overlayElement?.removeEventListener('click', this.handleOverlayClick);
 
-		this.closeButtons.forEach((button) => {
+		this._closeButtons.forEach((button) => {
 			button.removeEventListener('click', this.handleCloseButtonClick);
 		});
 	}
 
 	private handleOverlayClick = (event: MouseEvent): void => {
-		if (event.target === this.overlayElement) {
+		if (event.target === this._overlayElement) {
 			this.close();
 		}
 	};
@@ -193,29 +194,29 @@ export class PopupInstance extends EventEmitter {
 	}
 
 	private bindEscapeHandler(): void {
-		this.escapeHandler = (event: KeyboardEvent) => this.handleEscapeKey(event);
-		document.addEventListener('keydown', this.escapeHandler);
+		this._escapeHandler = (event: KeyboardEvent) => this.handleEscapeKey(event);
+		document.addEventListener('keydown', this._escapeHandler);
 	}
 
 	private unbindEscapeHandler(): void {
-		if (this.escapeHandler) {
-			document.removeEventListener('keydown', this.escapeHandler);
-			this.escapeHandler = null;
+		if (this._escapeHandler) {
+			document.removeEventListener('keydown', this._escapeHandler);
+			this._escapeHandler = null;
 		}
 	}
 
 	private saveTriggerData(trigger?: HTMLElement): void {
 		if (trigger) {
-			this.currentTriggerData = getDataAttributes(trigger, 'popup');
+			this._currentTriggerData = getDataAttributes(trigger, 'popup');
 		}
 		else {
-			this.currentTriggerData = null;
+			this._currentTriggerData = null;
 		}
 	}
 
 	private clearTriggerData(): void {
-		this.currentTrigger = null;
-		this.currentTriggerData = null;
+		this._currentTrigger = null;
+		this._currentTriggerData = null;
 	}
 
 	private lockPage(): void {
@@ -227,10 +228,10 @@ export class PopupInstance extends EventEmitter {
 	}
 
 	private addOpenedClass(): void {
-		this.element.classList.add(POPUP_OPENED_CLASS);
+		this._element.classList.add(POPUP_OPENED_CLASS);
 	}
 
 	private removeOpenedClass(): void {
-		this.element.classList.remove(POPUP_OPENED_CLASS);
+		this._element.classList.remove(POPUP_OPENED_CLASS);
 	}
 }
