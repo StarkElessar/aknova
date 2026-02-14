@@ -1,16 +1,16 @@
 {% macro AdvertisingBlock(className="", btnText="У меня остался вопрос") %}
-<div class="advertising-block {{ className }}">
-	<div class="advertising-block__row">
+<div class="advertising-block-cta {{ className }}">
+	<div class="advertising-block-cta__row">
 		<div class="semi-bold text-md">
 			Чтобы <a href="#call-request-cta" class="text-blue">купить окна</a>
 			и получить консультацию, свяжитесь с нашими менеджерами по номеру телефона
 		</div>
-		<a href="tel:+73532556666" class="advertising-block__phone text-dark-blue title title_lg">
+		<a href="tel:+73532556666" class="advertising-block-cta__phone text-dark-blue title title_lg">
 			<img class="lazy" src="#" data-src="{{ basePath }}/icons/call-phone.svg" width="32" height="32" alt="Телефон" />
 			+7 3532 55-66-66
 		</a>
 	</div>
-	<div class="advertising-block__row">
+	<div class="advertising-block-cta__row">
 		<p class="italic text-md semi-bold">Всегда рады новым клиентам!</p>
 		<button class="btn btn_lg btn_gradient btn_full" type="button"
 		        data-popup-id="request-call-popup"
