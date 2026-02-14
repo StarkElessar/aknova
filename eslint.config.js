@@ -13,17 +13,17 @@ export default [
 		plugins: {
 			'@typescript-eslint': tsEslint.plugin,
 			'@stylistic': stylistic,
-			'simple-import-sort': simpleImportSort,
+			'simple-import-sort': simpleImportSort
 		},
 		languageOptions: {
 			parser: tsEslint.parser,
 			parserOptions: {
-				sourceType: 'module',
+				sourceType: 'module'
 			},
 			globals: {
 				...globals.browser,
-				...globals.node,
-			},
+				...globals.node
+			}
 		},
 		rules: {
 			semi: ['error', 'always'],
@@ -54,44 +54,47 @@ export default [
 						// Other relative imports - same-folder imports and `.` last
 						['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
 						// Type imports (should be at the end of each logical group)
-						['^.+\\u0000$'],
-					],
-				},
+						['^.+\\u0000$']
+					]
+				}
 			],
 			'simple-import-sort/exports': 'error',
+			'@typescript-eslint/no-unsafe-function-type': 'warn',
 			'@typescript-eslint/no-unused-vars': [
 				'error',
 				{
 					argsIgnorePattern: '^_',
 					varsIgnorePattern: '^_',
-					caughtErrorsIgnorePattern: '^_',
-				},
+					caughtErrorsIgnorePattern: '^_'
+				}
 			],
 			'@typescript-eslint/no-explicit-any': 'warn',
 			'@typescript-eslint/no-empty-object-type': [
 				'warn',
-				{ allowInterfaces: 'with-single-extends' },
+				{ allowInterfaces: 'with-single-extends' }
 			],
 			'@typescript-eslint/consistent-type-imports': [
 				'error',
 				{
 					prefer: 'type-imports',
-					fixStyle: 'separate-type-imports',
-				},
+					fixStyle: 'separate-type-imports'
+				}
 			],
 			'@stylistic/quotes': [
 				'error',
 				'single',
 				{
 					avoidEscape: true,
-					allowTemplateLiterals: 'always',
-				},
+					allowTemplateLiterals: 'always'
+				}
 			],
 			'@stylistic/jsx-quotes': ['error', 'prefer-double'],
 			'@stylistic/brace-style': ['error', 'stroustrup'],
-			'@stylistic/indent': ['error', 'tab', {
-				ignoredNodes: ['TemplateLiteral > *'],
-			}],
+			'@stylistic/indent': [
+				'error', 'tab', {
+					ignoredNodes: ['TemplateLiteral > *']
+				}
+			],
 			'@stylistic/indent-binary-ops': ['error', 'tab'],
 			'@stylistic/template-curly-spacing': ['error', 'never'],
 			'no-restricted-syntax': [
@@ -100,10 +103,10 @@ export default [
 					selector:
 						'ImportDeclaration[source.value=/\\.(css|scss)$/] > ImportDefaultSpecifier[local.name!="css"]',
 					message:
-						'CSS/SCSS module imports must use "css" as the import name. Use "import css from \'...\'" instead.',
-				},
-			],
-		},
+						'CSS/SCSS module imports must use "css" as the import name. Use "import css from \'...\'" instead.'
+				}
+			]
+		}
 	},
 	{
 		files: ['src/**/*.{ts,tsx}'],
@@ -111,11 +114,11 @@ export default [
 			parser: tsEslint.parser,
 			parserOptions: {
 				sourceType: 'module',
-				project: './tsconfig.json',
-			},
-		},
+				project: './tsconfig.json'
+			}
+		}
 	},
 	{
-		ignores: ['dist', 'node_modules'],
-	},
+		ignores: ['dist', 'node_modules']
+	}
 ];
