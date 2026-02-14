@@ -1,15 +1,30 @@
+.form-field {
+	display: grid;
+	gap: 8px;
+
+	&.error {
+		&::after {
+			content: attr(data-error-message);
+			display: inline-flex;
+			font-size: 12px;
+			color: var(--color-red-700);
+		}
+	}
+
+	&__required {
+		color: var(--color-red-700);
+	}
+}
+
 .input {
 	width: 100%;
 	line-height: 1.4;
+	padding-block: 12px;
 	padding-inline: 16px;
 	border-radius: var(--control-radius);
 	transition-timing-function: ease-in-out;
 	transition-duration: .2s;
 	transition-property: border-color, color, background-color;
-
-	&::placeholder {
-		color: inherit;
-	}
 
 	&_md {
 		font-size: 16px;
@@ -27,13 +42,46 @@
 		backdrop-filter: blur(2px);
 		border: 1px solid color-mix(in srgb, var(--color-grey-700), transparent 50%);
 
+		&::placeholder {
+			color: color-mix(in srgb, var(--color-grey-100), transparent 50%);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: var(--color-grey-100);
+			}
+		}
+
 		&:focus {
+			border-color: var(--color-grey-100);
+		}
+
+		.error & {
 			border-color: var(--color-red-700);
 		}
 	}
 
 	&_white {
-		color: var(--color-grey-700);
+		color: var(--color-grey-800);
 		background-color: var(--color-grey-100);
+		border: 1px solid color-mix(in srgb, var(--color-grey-100), transparent 50%);
+
+		&::placeholder {
+			color: var(--color-grey-600);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: var(--color-blue-900);
+			}
+		}
+
+		&:focus {
+			border-color: var(--color-blue-900);
+		}
+
+		.error & {
+			border-color: var(--color-red-700);
+		}
 	}
 }
