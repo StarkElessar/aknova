@@ -1,4 +1,5 @@
 ﻿import { validateInput } from '@scripts/shared/lib/validate-input';
+
 import type { FormHandlerProps } from './types';
 
 export const formHandler = (props: FormHandlerProps) => {

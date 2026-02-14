@@ -3,7 +3,7 @@ export const initMaskInput = () => {
 	const maskTypes = {
 		phone: '+{7} (000) 000-00-00',
 		abc: /[А-яЁёA-z ]+$/
-	}
+	};
 
 	document.querySelectorAll<HTMLInputElement>('[data-mask]').forEach(input => {
 		const maskType = input.getAttribute('data-mask') ?? '';

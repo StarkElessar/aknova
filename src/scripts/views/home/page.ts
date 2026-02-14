@@ -1,4 +1,5 @@
 import { AccordionSE } from '@scripts/shared/lib/accordion-se';
+import { formHandler } from '@scripts/shared/lib/form-handler';
 
 import { initHeroSlider } from '@scripts/features/hero-slider';
 import { initHowWeDoSlider } from '@scripts/features/how-we-do-slider';
@@ -7,7 +8,6 @@ import { initReviewsSlider } from '@scripts/features/reviews-slider';
 import { initServicesSlider } from '@scripts/features/services-slider';
 import { initStockSlider } from '@scripts/features/stock-slider';
 import { initUsefulArticlesSlider } from '@scripts/features/useful-articles-slider';
-import { formHandler } from '@scripts/shared/lib/form-handler';
 
 function initHomeScripts() {
 	initHeroSlider();

@@ -1,4 +1,5 @@
 import LazyLoad from 'vanilla-lazyload';
+
 import type { ILazyLoadInstance, ILazyLoadOptions } from 'vanilla-lazyload';
 
 export class LazyLoadManager {
