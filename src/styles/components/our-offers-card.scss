@@ -1,0 +1,50 @@
+.our-offers-card {
+	&:not(&_big) {
+		max-width: 400px;
+	}
+
+	&__image {
+		min-height: 276px;
+		display: grid;
+		place-content: center;
+		padding-inline: 24px;
+		background-image: url("/images/our-offers/bg.png");
+		background-repeat: repeat;
+		background-size: cover;
+
+		img {
+			width: auto;
+		}
+	}
+
+	&,
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__body {
+		padding: 24px;
+		flex-grow: 1;
+
+		@media (width >= 640px) {
+			padding: 32px;
+		}
+	}
+
+	&__title {
+		margin-block-end: 16px;
+	}
+
+	&__description {
+		flex-grow: 1;
+		margin-block-end: 24px;
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		justify-content: space-between;
+	}
+}

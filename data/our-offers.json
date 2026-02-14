@@ -1,0 +1,79 @@
+{
+	"ourOffers": [
+		{
+			"tabTitle": "Окна",
+			"tabKey": "windows",
+			"tabContents": [
+				{
+					"title": "Одностворчатое окно 60×140",
+					"description": "поворотно-откидная створка",
+					"price": "10 900 руб.",
+					"image": "/images/our-offers/windows/01.png",
+					"imageHeight": 228
+				},
+				{
+					"title": "Двухстворчатое окно 130×140",
+					"description": "поворотно-откидная, поворотная створки",
+					"price": "18 600 руб.",
+					"image": "/images/our-offers/windows/02.png",
+					"imageHeight": 228
+				},
+				{
+					"title": "Трехстворчатое окно 204×140",
+					"description": "поворотно-откидная, поворотная створки",
+					"price": "25 500 руб.",
+					"image": "/images/our-offers/windows/03.png",
+					"imageHeight": 228
+				}
+			]
+		},
+		{
+			"tabTitle": "Балконные блоки",
+			"tabKey": "balcony-blocks",
+			"tabContents": [
+				{
+					"title": "Балконный блок 80×140 + 67×210",
+					"description": "поворотно-откидная створка",
+					"price": "25 300 руб.",
+					"image": "/images/our-offers/balcony-blocks/01.png",
+					"imageHeight": 228
+				},
+				{
+					"title": "Балконный блок 137×140 + 67×210",
+					"description": "глухая, поворотная створки",
+					"price": "33 000 руб.",
+					"image": "/images/our-offers/balcony-blocks/02.png",
+					"imageHeight": 228
+				},
+				{
+					"title": "Балконный блок 137×142 + 67×210",
+					"description": "поворотно-откидная, поворотная, глухая створки",
+					"price": "38 650 руб.",
+					"image": "/images/our-offers/balcony-blocks/03.png",
+					"imageHeight": 228
+				}
+			]
+		},
+		{
+			"tabTitle": "Остекление лоджий",
+			"tabKey": "glazing-of-loggias",
+			"tabContents": [
+				{
+					"title": "Балконное окно 300×150",
+					"description": "поворотно-откидная, поворотная створки",
+					"price": "41 150 руб.",
+					"image": "/images/our-offers/glazing-of-loggias/01.png",
+					"imageHeight": 180
+				},
+				{
+					"title": "Балконное окно 600×150",
+					"description": "поворотно-откидная, поворотная, глухая створки",
+					"price": "82 650 руб.",
+					"image": "/images/our-offers/glazing-of-loggias/02.png",
+					"imageHeight": 180,
+					"isBig": true
+				}
+			]
+		}
+	]
+}

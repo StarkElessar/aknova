@@ -21,11 +21,16 @@
 
 	&__tabs {
 		display: grid;
+		grid-auto-columns: 100%;
 		gap: 24px;
 
 		@media (width >= 960px) {
 			grid-column: 1 / -1;
 			gap: 40px;
 		}
+	}
+
+	&__slide {
+		display: flex;
 	}
 }

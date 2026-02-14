@@ -3,38 +3,52 @@
 		<h2 class="title title_3xl text-dark-blue text-uppercase">Наши предложения</h2>
 		<div class="text-md our-offers__description">
 			<p>
-				Цены на окна и стеклопакеты зависят от множества факторов.
-				Основные — размер оконных конструкций и количество створок.
+				Цены на окна и стеклопакеты зависят от множества факторов.
+				Основные — размер оконных конструкций и количество створок.
 				Рассчитайте стоимость окна, пригласив наших замерщиков.
 			</p>
 			<p>
-				Определите особенности вашего балконного блока, оставив заявку на сайте.
-				Наши специалисты свяжутся с вами в ближайшее время.
+				Определите особенности вашего балконного блока, оставив заявку на сайте.
+				Наши специалисты свяжутся с вами в ближайшее время.
 			</p>
 		</div>
 
 		<div class="our-offers__tabs" data-tabs="our-offers">
 			<nav class="tabs-navigation" data-tabs="navigate">
-				<button class="tabs-navigation__item" data-value-tabs="windows" data-tabs="trigger" type="button">
-					Окна
+				{% for tab in ourOffers %}
+				<button class="tabs-navigation__item" data-value-tabs="{{ tab.tabKey }}" data-tabs="trigger" type="button">
+					{{ tab.tabTitle }}
 				</button>
-				<button class="tabs-navigation__item" data-value-tabs="balcony-blocks" data-tabs="trigger" type="button">
-					Балконные блоки
-				</button>
-				<button class="tabs-navigation__item" data-value-tabs="glazing-of-loggias" data-tabs="trigger" type="button">
-					Остекление лоджий
-				</button>
+				{% endfor %}
 			</nav>
 			<div data-tabs="content">
-				<div data-tabs="item" data-type="windows">
-					<h3 class="title title_4xl text-dark-blue">Окна</h3>
+				{% for tab in ourOffers %}
+				<div data-tabs="item" data-type="{{ tab.tabKey }}">
+					<div class="swiper swiper-overflow our-offers__cards">
+						<div class="swiper-wrapper">
+							{% for card in tab.tabContents %}
+							<div class="swiper-slide our-offers__slide">
+								<article class="our-offers-card base-card {% if card.isBig %}our-offers-card_big{% endif %}">
+									<div class="our-offers-card__image">
+										<img src="{{ card.image }}" alt="{{ card.title }}" height="{{ card.imageHeight }}" loading="lazy">
+									</div>
+									<div class="our-offers-card__body">
+										<h3 class="our-offers-card__title title title_sm">{{ card.title }}</h3>
+										<div class="our-offers-card__description">
+											<p class="text-md">{{ card.description }}</p>
+										</div>
+										<div class="our-offers-card__footer">
+											<span class="text-orange title title_2xl">{{ card.price }}</span>
+											<button class="btn btn_blue btn_md" type="button">Заказать</button>
+										</div>
+									</div>
+								</article>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
 				</div>
-				<div data-tabs="item" data-type="balcony-blocks">
-					<h3 class="title title_4xl text-dark-blue">Балконные блоки</h3>
-				</div>
-				<div data-tabs="item" data-type="glazing-of-loggias">
-					<h3 class="title title_4xl text-dark-blue">Остекление лоджий</h3>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

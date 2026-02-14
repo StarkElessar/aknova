@@ -8,6 +8,7 @@ import common from './data/common.json';
 import faqAccordion from './data/faq-accordion.json';
 import reviews from './data/reviews.json';
 import usefulArticles from './data/useful-articles.json';
+import ourOffers from './data/our-offers.json';
 
 export default defineConfig(({ command }) => {
 	const templatesDir = resolve(__dirname, 'src/shared');
@@ -27,7 +28,8 @@ export default defineConfig(({ command }) => {
 				...faqAccordion,
 				...usefulArticles,
 				...reviews,
-				...accessories
+				...accessories,
+				...ourOffers
 			}
 		}
 	});
