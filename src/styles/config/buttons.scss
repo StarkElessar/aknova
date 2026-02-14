@@ -10,6 +10,21 @@
 	transition-duration: .25s;
 	transition-timing-function: ease-in-out;
 
+	&[type=submit].loading {
+		white-space: nowrap;
+
+		&::after {
+			content: "";
+			width: 16px;
+			aspect-ratio: 1;
+			flex-shrink: 0;
+			border-radius: 50%;
+			border: 2px solid var(--color-grey-100);
+			border-right-color: #f35c37;
+			animation: rotate 1s linear infinite;
+		}
+	}
+
 	&_full {
 		width: 100%;
 	}
