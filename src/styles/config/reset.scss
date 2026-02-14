@@ -41,9 +41,14 @@ a {
 fieldset,
 button,
 input,
-iframe {
+iframe,
+textarea {
 	outline: none;
 	border: none;
+}
+
+textarea {
+	resize: none;
 }
 
 button {
