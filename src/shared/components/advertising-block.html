@@ -1,4 +1,4 @@
-{% macro AdvertisingBlock(className="") %}
+{% macro AdvertisingBlock(className="", btnText="У меня остался вопрос") %}
 <div class="advertising-block {{ className }}">
 	<div class="advertising-block__row">
 		<div class="semi-bold text-md">
@@ -12,7 +12,7 @@
 	</div>
 	<div class="advertising-block__row">
 		<p class="italic text-md semi-bold">Всегда рады новым клиентам!</p>
-		<button class="btn btn_lg btn_gradient btn_full" type="button">У меня остался вопрос</button>
+		<button class="btn btn_lg btn_gradient btn_full" type="button">{{ btnText }}</button>
 	</div>
 </div>
 {% endmacro %}

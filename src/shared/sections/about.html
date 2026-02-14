@@ -1,0 +1,37 @@
+{% from "components/advertising-block.html" import AdvertisingBlock %}
+
+<section class="about">
+	<div class="container about__container">
+		<h2 class="title title_3xl text-uppercase text-dark-blue about__title">О компании акнова</h2>
+		<div class="about__content">
+			<div class="about__text">
+				<h3 class="title title_lg">Пластиковые окна в Оренбурге</h3>
+				<p class="text-md">
+					Заказывайте пластиковые окна только в проверенных компаниях. Это гарантирует долгий срок службы. Компания «Акнова» несёт
+					полную ответственность за свою продукцию и предлагает гарантийное обслуживание в течение 5 лет.
+				</p>
+			</div>
+			<div class="about__statistic">
+				<h4 class="title title_sm">Качество и долговечность окон зависит:</h4>
+				<img src="/images/about/statistic.png" width="360" height="191" alt="" />
+				<p class="title text-uppercase text-md text-dark-blue">Именно такой подход предлагает компания «Акнова»</p>
+			</div>
+			<p class="text-md italic">
+				Все сотрудники в обязательном порядке проходят профильное обучение. Кроме того, мы широко практикуем обмен опытом
+				и курирование новичков в рабочих бригадах.
+			</p>
+		</div>
+
+		<div class="base-card base-card_shadow about__card">
+			<div class="about__info">
+				<p class="semi-bold text-white text-lg">
+					Торговая марка «Акнова» хорошо известна в Оренбурге. Наша компания с 2005 года производит окна ПВХ и осуществляет
+					их профессиональный монтаж!
+				</p>
+				<img class="" src="/images/about/man.png" width="145" height="169" alt="" />
+				<button class="btn btn_md btn_white text-white" type="button">Узнать больше</button>
+			</div>
+			{{ AdvertisingBlock("", "Купить окна") }}
+		</div>
+	</div>
+</section>
