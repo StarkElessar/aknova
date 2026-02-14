@@ -1,0 +1,47 @@
+.popup {
+	$this: &;
+
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(#000, 60%);
+	z-index: 10;
+	overflow-y: auto;
+	pointer-events: none;
+	visibility: hidden;
+	opacity: 0;
+	transition-property: opacity, visibility;
+	transition-timing-function: ease-in-out;
+	transition-duration: .3s;
+
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+
+		#{$this}__body {
+			transform: translateY(0);
+		}
+	}
+
+	&__overlay {
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-height: 100%;
+	}
+
+	&__body {
+		position: relative;
+		transform: translateY(-100vh);
+		width: 100%;
+		max-width: 500px;
+		overflow: hidden;
+		transition-property: opacity, transform;
+		transition-timing-function: ease-in-out;
+		transition-duration: .3s;
+	}
+}
