@@ -98,3 +98,26 @@
 		background: var(--gradient-max-app);
 	}
 }
+
+.go-top-button {
+	position: fixed;
+	width: 48px;
+	height: 48px;
+	display: grid;
+	place-content: center;
+	background-color: var(--color-grey-100);
+	box-shadow: var(--shadow-sky);
+	border-radius: var(--radius-md);
+	right: -100%;
+	bottom: var(--container-offset);
+	opacity: 0;
+	transition-property: opacity, right;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+	z-index: 1;
+
+	&_show {
+		right: var(--container-offset);
+		opacity: 1;
+	}
+}
