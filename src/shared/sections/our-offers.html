@@ -28,7 +28,8 @@
 							<div class="swiper-slide our-offers__slide">
 								<article class="our-offers-card base-card {% if card.isBig %}our-offers-card_big{% endif %}">
 									<div class="our-offers-card__image">
-										<img src="{{ card.image }}" alt="{{ card.title }}" height="{{ card.imageHeight }}" loading="lazy" />
+										<img class="lazy" src="#" data-src="{{ card.image }}" alt="{{ card.title }}"
+										     height="{{ card.imageHeight }}" />
 									</div>
 									<div class="our-offers-card__body">
 										<h3 class="our-offers-card__title title title_sm">{{ card.title }}</h3>

@@ -1,7 +1,11 @@
 .hero-home {
 	position: relative;
-	padding-block: 190px 60px;
+	padding-block: calc(var(--header-height) + 40px) 32px;
 	min-height: 100dvh;
+
+	@media (width >= 960px) {
+		padding-block: calc(var(--header-height) + 100px) 60px;
+	}
 
 	&::before,
 	&__bg {

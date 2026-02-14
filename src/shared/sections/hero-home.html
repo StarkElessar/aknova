@@ -1,5 +1,8 @@
 <section class="hero-home">
-	<img class="hero-home__bg" src="/images/hero-home/bg-desktop.jpg" alt="" />
+	<picture>
+		<source srcset="/images/hero-home/bg-desktop.webp" media="(min-width: 640px)">
+		<img class="hero-home__bg" src="/images/hero-home/bg-mobile.webp" alt="">
+	</picture>
 	<div class="hero-home__container container">
 		<h1 class="hero-home__title title title_4xl text-white text-uppercase">Наши окна прослужат вам дольше других!</h1>
 
@@ -22,7 +25,7 @@
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="hero-card">
-							<img src="/images/hero-home/01.png" alt="" class="hero-card__image" />
+							<img src="/images/hero-home/01.png" alt="" class="hero-card__image" loading="lazy">
 							<div class="semi-bold text-blue text-md">Честный монтаж QR.</div>
 							<div class="text-md">Считываете QR-код на окне и смотрите скрытые работы</div>
 						</div>
