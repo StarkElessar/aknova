@@ -57,7 +57,7 @@ export class TabsSE {
 			trigger.onclick = (event) => {
 				const currentTarget = event.currentTarget as HTMLElement;
 				const currentTab = tabsNav.querySelector(`.${tabsTriggerActiveClassName}`) as HTMLElement;
-				(currentTarget !== currentTab) && this.switchTabs(currentTarget, currentTab, index);
+				if (currentTarget !== currentTab) this.switchTabs(currentTarget, currentTab, index);
 			};
 		});
 

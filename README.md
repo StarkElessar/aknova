@@ -6,9 +6,9 @@ Multi-page Vite application using vanilla TypeScript without a framework.
 
 - [Prerequisites](#prerequisites)
 - [Installing Bun](#installing-bun)
-  - [macOS](#macos)
-  - [Linux](#linux)
-  - [Windows](#windows)
+    - [macOS](#macos)
+    - [Linux](#linux)
+    - [Windows](#windows)
 - [Project Setup](#project-setup)
 - [Development](#development)
 - [Building for Production](#building-for-production)
@@ -20,6 +20,7 @@ Multi-page Vite application using vanilla TypeScript without a framework.
 This project uses **Bun** as the JavaScript runtime and package manager. You need to install Bun before setting up the project.
 
 **System Requirements:**
+
 - macOS, Linux, or Windows (via WSL2 or native Windows support)
 - 64-bit processor
 
@@ -72,11 +73,13 @@ source ~/.zshrc   # For Zsh
 **Alternative: Using package managers**
 
 For **Arch Linux** (AUR):
+
 ```bash
 yay -S bun-bin
 ```
 
 For **NixOS**:
+
 ```bash
 nix-shell -p bun
 ```
@@ -100,19 +103,21 @@ powershell -c "irm bun.sh/install.ps1 | iex"
 **Option 2: Using WSL2 (Windows Subsystem for Linux)**
 
 1. Install WSL2 if you haven't already:
-   ```powershell
-   wsl --install
-   ```
+
+    ```powershell
+    wsl --install
+    ```
 
 2. Open your WSL2 terminal (Ubuntu, Debian, etc.) and run:
-   ```bash
-   curl -fsSL https://bun.sh/install | bash
-   ```
+
+    ```bash
+    curl -fsSL https://bun.sh/install | bash
+    ```
 
 3. Restart your WSL terminal or source your profile:
-   ```bash
-   source ~/.bashrc
-   ```
+    ```bash
+    source ~/.bashrc
+    ```
 
 **Option 3: Using Scoop**
 
@@ -154,6 +159,7 @@ bun run dev
 The development server will start on `http://localhost:3000` (or the next available port).
 
 **Features:**
+
 - Hot Module Replacement (HMR)
 - Fast refresh on file changes
 - Automatic browser reload
@@ -167,6 +173,7 @@ bun run build
 ```
 
 This will:
+
 1. Run TypeScript type checking (`tsc`)
 2. Build the project using Vite
 3. Output files to the `dist/` directory
@@ -196,6 +203,7 @@ bun run lint
 ```
 
 This checks:
+
 - JavaScript/TypeScript code with ESLint
 - CSS with Stylelint
 - HTML/CSS formatting with Prettier
@@ -207,6 +215,7 @@ bun run lint:fix
 ```
 
 Automatically fixes:
+
 - ESLint issues
 - Stylelint issues
 - Code formatting with Prettier
@@ -251,9 +260,9 @@ aknova/
 
 - **View structure**: Each view has `page.ts` and `page.css` in its respective directories
 - **Path aliases**:
-  - `@` → `src/`
-  - `@scripts` → `src/scripts/`
-  - `@styles` → `src/styles/`
+    - `@` → `src/`
+    - `@scripts` → `src/scripts/`
+    - `@styles` → `src/styles/`
 - **Naming**: Use kebab-case for all directories and files
 - **Auto-discovery**: Vite automatically discovers `page.{ts,css}` files in view directories
 
@@ -275,20 +284,24 @@ aknova/
 ## Troubleshooting
 
 **Bun command not found after installation:**
+
 - Restart your terminal
 - Source your shell profile: `source ~/.bashrc` or `source ~/.zshrc`
 - Check if Bun is in your PATH: `echo $PATH`
 
 **Port already in use:**
+
 - The dev server will automatically use the next available port
 - Or manually specify a port: `bun run dev -- --port 3001`
 
 **Build errors:**
+
 - Clear the cache: `rm -rf node_modules .vite dist`
 - Reinstall dependencies: `bun install`
 - Run type checking: `bunx tsc --noEmit`
 
 **Windows-specific issues:**
+
 - If using native Windows and encountering issues, try WSL2
 - Ensure your PowerShell execution policy allows scripts
 - Run PowerShell as Administrator if needed

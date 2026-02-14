@@ -1,8 +1,9 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+
+import { FancyboxLoader } from '@scripts/shared/lib/fancybox';
 import { TabsSE } from '@scripts/shared/lib/tabs-se';
 import { TooltipLoader } from '@scripts/shared/lib/tooltip';
-import { FancyboxLoader } from '@scripts/shared/lib/fancybox';
 
 const DESKTOP_BREAKPOINT = 1260;
 

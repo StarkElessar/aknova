@@ -10,38 +10,24 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			{% include "components/header.html" %}
-			{% include "sections/hero-home.html" %}
+			{% include "components/header.html" %} {% include "sections/hero-home.html" %}
+			<div class="section-group section-group_white">{% include "sections/about.html" %}</div>
+			<div class="section-group section-group_sky">{% include "sections/our-offers.html" %}</div>
 			<div class="section-group section-group_white">
-				{% include "sections/about.html" %}
+				{% include "sections/order-process.html" %} {% include "sections/how-we-do.html" %}
 			</div>
-			<div class="section-group section-group_sky">
-				{% include "sections/our-offers.html" %}
-			</div>
+			<div class="section-group section-group_sky">{% include "sections/accessories.html" %}</div>
 			<div class="section-group section-group_white">
-				{% include "sections/order-process.html" %}
-				{% include "sections/how-we-do.html" %}
-			</div>
-			<div class="section-group section-group_sky">
-				{% include "sections/accessories.html" %}
-			</div>
-			<div class="section-group section-group_white">
-				{% include "sections/services.html" %}
-				{% include "sections/video-right-windows.html" %}
-				{% include "sections/stock.html" %}
+				{% include "sections/services.html" %} {% include "sections/video-right-windows.html" %} {% include "sections/stock.html" %}
 			</div>
 			<div class="section-group section-group_sky">{% include "sections/reviews.html" %}</div>
 			<div class="section-group section-group_white">
-				{% include "sections/our-clients.html" %}
-				{% include "sections/useful-articles.html" %}
-				{% include "sections/faq-cta.html" %}
-				{% include "sections/call-request-cta.html" %}
+				{% include "sections/our-clients.html" %} {% include "sections/useful-articles.html" %} {% include "sections/faq-cta.html"
+				%} {% include "sections/call-request-cta.html" %}
 			</div>
-			{% include "sections/office-map.html" %}
-			{% include "components/footer.html" %}
+			{% include "sections/office-map.html" %} {% include "components/footer.html" %}
 		</div>
-		{% include "ui/go-top-button.html" %}
-		{% include "components/request-call-popup.html" %}
+		{% include "ui/go-top-button.html" %} {% include "components/request-call-popup.html" %}
 		<script type="module" src="/src/scripts/main.ts"></script>
 		<script type="module" src="/src/scripts/views/home/page.ts"></script>
 	</body>

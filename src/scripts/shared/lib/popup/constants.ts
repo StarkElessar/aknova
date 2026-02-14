@@ -7,7 +7,7 @@ export const DATA_CLOSE_OVERLAY = 'data-close-overlay';
 // CSS classes
 export const POPUP_CLASS = 'popup';
 export const POPUP_OPENED_CLASS = 'popup_opened';
-export const BODY_LOCKED_CLASS = 'body-locked';
+export const BODY_LOCKED_CLASS = 'locked';
 
 // Events
 export const EVENT_BEFORE_OPEN = 'beforeOpen';

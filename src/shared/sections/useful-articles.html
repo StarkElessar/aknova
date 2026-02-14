@@ -5,7 +5,7 @@
 			<div class="swiper-wrapper">
 				{% for article in usefulArticles %}
 				<div class="swiper-slide useful-articles__slide">
-					<article class="base-card base-card_shadow useful-articles__card">
+					<a href="#" class="base-card base-card_shadow useful-articles__card">
 						<div class="useful-articles__card-image">
 							<img src="/images/useful-articles/01.png" width="268" height="208" alt="" />
 						</div>
@@ -13,7 +13,7 @@
 							<h3 class="useful-articles__card-title title title_sm">{{ article.title }}</h3>
 							<p class="text-md">{{ article.description }}</p>
 						</div>
-					</article>
+					</a>
 				</div>
 				{% endfor %}
 			</div>

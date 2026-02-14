@@ -1,12 +1,13 @@
-import { PopupInstance } from './popup-instance';
-import type { IPopupConfig, ITriggerConfig, IPopupEventData } from './types';
 import {
-	POPUP_CLASS,
 	DATA_POPUP_ID,
-	EVENT_OPEN,
 	EVENT_CLOSE,
+	EVENT_OPEN,
+	POPUP_CLASS,
 } from './constants';
+import { PopupInstance } from './popup-instance';
 import { generateId, getDataAttributes } from './utils';
+
+import type { IPopupConfig, IPopupEventData,ITriggerConfig } from './types';
 
 export class PopupManager {
 	private static instance: PopupManager | null = null;

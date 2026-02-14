@@ -4,21 +4,21 @@ import type { TypeOrNull } from '@scripts/shared/types';
 export type UnmountLoader = () => void;
 
 export interface ThumbImage {
-    src: string;
-    thumbSrc?: string;
-    caption?: string;
-    thumbAlt?: string;
-    thumbClass?: string;
+	src: string;
+	thumbSrc?: string;
+	caption?: string;
+	thumbAlt?: string;
+	thumbClass?: string;
 }
 
 export interface IVirtualGalleryItem {
-    galleryContainerAttr: string;
-    images: ThumbImage[];
+	galleryContainerAttr: string;
+	images: ThumbImage[];
 }
 
 export interface FancyboxLoaderOptions {
-    cssUrl?: string;
-    /**
+	cssUrl?: string;
+	/**
      * Атрибут для триггеров Fancybox. Элементы с ОДИНАКОВЫМ значением этого атрибута
      * объединяются в галерею. При клике открывается слайдер с элементами из той же группы.
      *
@@ -43,8 +43,8 @@ export interface FancyboxLoaderOptions {
      *
      * @default 'data-fancybox'
      * */
-    containerDataAttr?: string;
-    fancyboxOptions?: Partial<FancyboxOptions>;
-    loaderTemplate?: TypeOrNull<() => UnmountLoader>;
-    virtualGalleryItems?: IVirtualGalleryItem[];
+	containerDataAttr?: string;
+	fancyboxOptions?: Partial<FancyboxOptions>;
+	loaderTemplate?: TypeOrNull<() => UnmountLoader>;
+	virtualGalleryItems?: IVirtualGalleryItem[];
 }

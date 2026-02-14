@@ -12,7 +12,11 @@
 	</div>
 	<div class="advertising-block__row">
 		<p class="italic text-md semi-bold">Всегда рады новым клиентам!</p>
-		<button class="btn btn_lg btn_gradient btn_full" type="button">{{ btnText }}</button>
+		<button class="btn btn_lg btn_gradient btn_full" type="button"
+		        data-popup-id="request-call-popup"
+		        data-popup-title="{{ btnText }}">
+			{{ btnText }}
+		</button>
 	</div>
 </div>
 {% endmacro %}

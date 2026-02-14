@@ -7,8 +7,9 @@
 	z-index: 10;
 	background-color: var(--color-grey-100);
 
-	.burger-menu-opened,
-	.with-fancybox & {
+	.burger-menu-opened &,
+	.with-fancybox &,
+	.locked & {
 		width: calc(100% - var(--scrollbar-width));
 	}
 

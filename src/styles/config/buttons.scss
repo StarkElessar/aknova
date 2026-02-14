@@ -127,7 +127,8 @@
 	}
 
 	.burger-menu-opened &,
-	.with-fancybox & {
+	.with-fancybox &,
+	.locked & {
 		right: calc(var(--container-offset) + var(--scrollbar-width));
 	}
 

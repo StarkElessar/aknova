@@ -3,13 +3,11 @@
 		<h2 class="title title_3xl text-dark-blue text-uppercase">Наши предложения</h2>
 		<div class="text-md our-offers__description">
 			<p>
-				Цены на окна и стеклопакеты зависят от множества факторов.
-				Основные — размер оконных конструкций и количество створок.
+				Цены на окна и стеклопакеты зависят от множества факторов. Основные — размер оконных конструкций и количество створок.
 				Рассчитайте стоимость окна, пригласив наших замерщиков.
 			</p>
 			<p>
-				Определите особенности вашего балконного блока, оставив заявку на сайте.
-				Наши специалисты свяжутся с вами в ближайшее время.
+				Определите особенности вашего балконного блока, оставив заявку на сайте. Наши специалисты свяжутся с вами в ближайшее время.
 			</p>
 		</div>
 
@@ -30,20 +28,26 @@
 							<div class="swiper-slide our-offers__slide">
 								<article class="our-offers-card base-card {% if card.isBig %}our-offers-card_big{% endif %}">
 									<div class="our-offers-card__image">
-										<img src="{{ card.image }}" alt="{{ card.title }}" height="{{ card.imageHeight }}" loading="lazy">
+										<img src="{{ card.image }}" alt="{{ card.title }}" height="{{ card.imageHeight }}" loading="lazy" />
 									</div>
 									<div class="our-offers-card__body">
 										<h3 class="our-offers-card__title title title_sm">{{ card.title }}</h3>
 										<div class="our-offers-card__description">
 											<p class="text-md">{{ card.description }}</p>
-											<span class="our-offers-card__tooltip title title_sm"
-											      data-tippy-content="<div class='our-offers-card__tooltip-content'><span>Фурнитура</span><span>Roto NT / Internika</span>">
+											<span
+												class="our-offers-card__tooltip title title_sm"
+												data-tippy-content="<div class='our-offers-card__tooltip-content'><span>Фурнитура</span><span>Roto NT / Internika</span>"
+											>
 												?
 											</span>
 										</div>
 										<div class="our-offers-card__footer">
 											<span class="text-orange title title_2xl">{{ card.price }}</span>
-											<button class="btn btn_blue btn_md" type="button">Заказать</button>
+											<button class="btn btn_blue btn_md" type="button"
+											        data-popup-id="request-call-popup"
+											        data-popup-title="Заказать {{ card.title }}">
+												Заказать
+											</button>
 										</div>
 									</div>
 								</article>

@@ -153,13 +153,7 @@ popup.once(event: string, callback: Function): void
 ### Вспомогательные функции
 
 ```typescript
-import { 
-	initPopups,
-	openPopup, 
-	closePopup, 
-	closeLastPopup, 
-	getPopup 
-} from '@scripts/shared/lib/popup';
+import { initPopups, openPopup, closePopup, closeLastPopup, getPopup } from '@scripts/shared/lib/popup';
 
 // Инициализация
 initPopups();
@@ -191,12 +185,7 @@ const popup = getPopup('my-popup');
 <button data-popup-id="request-call">Заказать звонок</button>
 
 <!-- С кастомными данными -->
-<button 
-	data-popup-id="request-call"
-	data-popup-title="Заказать окно"
-	data-popup-product="Арктика">
-	Заказать окно
-</button>
+<button data-popup-id="request-call" data-popup-title="Заказать окно" data-popup-product="Арктика">Заказать окно</button>
 ```
 
 ### Для попапов
@@ -245,17 +234,17 @@ const popup = getPopup('my-popup');
 
 if (popup) {
 	// Подписка на открытие
-	popup.on('open', (data) => {
+	popup.on('open', data => {
 		console.log('Попап открыт', data);
 	});
 
 	// Подписка на закрытие
-	popup.on('close', (data) => {
+	popup.on('close', data => {
 		console.log('Попап закрыт', data);
 	});
 
 	// Одноразовая подписка
-	popup.once('open', (data) => {
+	popup.once('open', data => {
 		console.log('Это сработает только один раз');
 	});
 }
@@ -267,12 +256,12 @@ if (popup) {
 
 ```typescript
 interface IPopupConfig {
-	id: string;                    // Уникальный ID попапа
-	element: HTMLElement;          // DOM элемент
-	closeOnOverlay?: boolean;      // Закрывать по overlay (default: true)
-	closeOnEscape?: boolean;       // Закрывать по Escape (default: true)
-	lockBody?: boolean;            // Блокировать скролл body (default: true)
-	animationDuration?: number;    // Длительность анимации в мс (default: 300)
+	id: string; // Уникальный ID попапа
+	element: HTMLElement; // DOM элемент
+	closeOnOverlay?: boolean; // Закрывать по overlay (default: true)
+	closeOnEscape?: boolean; // Закрывать по Escape (default: true)
+	lockBody?: boolean; // Блокировать скролл body (default: true)
+	animationDuration?: number; // Длительность анимации в мс (default: 300)
 }
 ```
 
@@ -305,19 +294,19 @@ const button = document.querySelector('.custom-button')!;
 PopupManager.registerTrigger({
 	element: button,
 	popupId: 'my-popup',
-	onBeforeOpen: (data) => {
+	onBeforeOpen: data => {
 		// Выполнится перед открытием
 		console.log('Trigger data:', data.triggerData);
-		
+
 		// Можно отменить открытие
 		if (someCondition) {
 			return false;
 		}
 	},
-	onOpen: (data) => {
+	onOpen: data => {
 		// Выполнится после открытия
 		console.log('Popup opened!');
-	}
+	},
 });
 ```
 
@@ -350,7 +339,7 @@ import { PopupManager } from '@scripts/shared/lib/popup';
 export function initPopupTitleHandler() {
 	const popups = PopupManager.getAll();
 
-	popups.forEach((popup) => {
+	popups.forEach(popup => {
 		const element = popup.getElement();
 		const titleElement = element.querySelector('.popup__title');
 
@@ -360,7 +349,7 @@ export function initPopupTitleHandler() {
 		const originalTitle = titleElement.textContent || '';
 
 		// Перед открытием - проверяем data-popup-title
-		popup.on('beforeOpen', (data) => {
+		popup.on('beforeOpen', data => {
 			const customTitle = data.triggerData?.['title'];
 			if (customTitle) {
 				titleElement.textContent = customTitle;
@@ -383,6 +372,7 @@ initPopupTitleHandler();
 ```
 
 HTML:
+
 ```html
 <!-- Попап -->
 <div id="request-call" class="popup">
@@ -396,24 +386,13 @@ HTML:
 </div>
 
 <!-- Кнопка 1: title не меняется -->
-<button data-popup-id="request-call">
-	Заказать звонок
-</button>
+<button data-popup-id="request-call">Заказать звонок</button>
 
 <!-- Кнопка 2: title = "Заказать окно" -->
-<button 
-	data-popup-id="request-call"
-	data-popup-title="Заказать окно">
-	Заказать окно
-</button>
+<button data-popup-id="request-call" data-popup-title="Заказать окно">Заказать окно</button>
 
 <!-- Кнопка 3: title = "Заказать окно Арктика" -->
-<button 
-	data-popup-id="request-call"
-	data-popup-title="Заказать окно Арктика"
-	data-popup-product="Арктика">
-	Купить
-</button>
+<button data-popup-id="request-call" data-popup-title="Заказать окно Арктика" data-popup-product="Арктика">Купить</button>
 ```
 
 ### Пример 3: Предзаполнение формы данными
@@ -424,13 +403,13 @@ import { PopupManager } from '@scripts/shared/lib/popup';
 const popup = PopupManager.get('contact-form');
 
 if (popup) {
-	popup.on('open', (data) => {
+	popup.on('open', data => {
 		const form = popup.getElement().querySelector('form');
 		const productField = form?.querySelector('[name="product"]') as HTMLInputElement;
-		
+
 		// Берём данные из триггера
 		const product = data.triggerData?.['product'];
-		
+
 		if (product && productField) {
 			productField.value = product;
 		}
@@ -444,7 +423,7 @@ if (popup) {
 import { PopupManager } from '@scripts/shared/lib/popup';
 
 // Глобальный обработчик Escape
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', event => {
 	if (event.key === 'Escape') {
 		PopupManager.closeLast();
 	}
@@ -467,6 +446,7 @@ document.addEventListener('keydown', (event) => {
 ```
 
 **Обязательные элементы:**
+
 - `.popup` - корневой элемент с уникальным `id`
 - `[data-close-overlay]` - элемент, по клику на который закрывается попап
 - `.popup__body` - контейнер контента
@@ -500,12 +480,7 @@ document.addEventListener('keydown', (event) => {
 ## TypeScript Types
 
 ```typescript
-import type { 
-	IPopupConfig, 
-	IPopupEventData, 
-	ITriggerConfig,
-	PopupEventCallback 
-} from '@scripts/shared/lib/popup';
+import type { IPopupConfig, IPopupEventData, ITriggerConfig, PopupEventCallback } from '@scripts/shared/lib/popup';
 ```
 
 ## Лицензия

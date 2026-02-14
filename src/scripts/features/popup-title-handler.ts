@@ -1,4 +1,4 @@
-import { PopupManager, type IPopupEventData } from '@scripts/shared/lib/popup';
+import { type IPopupEventData,PopupManager } from '@scripts/shared/lib/popup';
 
 export function initPopupTitleHandler() {
 	const popups = PopupManager.getAll();

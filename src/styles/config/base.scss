@@ -1,4 +1,5 @@
-.burger-menu-opened {
+.burger-menu-opened,
+.locked {
 	overflow: hidden;
 	padding-inline-end: var(--scrollbar-width);
 	background-color: var(--color-black-700);

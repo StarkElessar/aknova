@@ -1,22 +1,23 @@
-import { EventEmitter } from './event-emitter';
-import type { IPopupConfig, IPopupEventData } from './types';
 import {
+	ANIMATION_DURATION,
+	BODY_LOCKED_CLASS,
 	DATA_CLOSE_BUTTON,
 	DATA_CLOSE_OVERLAY,
-	POPUP_OPENED_CLASS,
-	BODY_LOCKED_CLASS,
-	EVENT_BEFORE_OPEN,
-	EVENT_OPEN,
-	EVENT_BEFORE_CLOSE,
-	EVENT_CLOSE,
 	ESCAPE_KEY,
-	ANIMATION_DURATION,
+	EVENT_BEFORE_CLOSE,
+	EVENT_BEFORE_OPEN,
+	EVENT_CLOSE,
+	EVENT_OPEN,
+	POPUP_OPENED_CLASS
 } from './constants';
-import { getDataAttributes, getScrollbarWidth } from './utils';
+import { EventEmitter } from './event-emitter';
+import { getDataAttributes } from './utils';
+
+import type { IPopupConfig, IPopupEventData } from './types';
 
 export class PopupInstance extends EventEmitter {
-	private id: string;
-	private element: HTMLElement;
+	private readonly id: string;
+	private readonly element: HTMLElement;
 	private config: IPopupConfig;
 	private isOpened: boolean;
 	private overlayElement: HTMLElement | null;
@@ -24,7 +25,6 @@ export class PopupInstance extends EventEmitter {
 	private currentTrigger: HTMLElement | null;
 	private currentTriggerData: Record<string, string> | null;
 	private escapeHandler: ((event: KeyboardEvent) => void) | null;
-	private scrollbarWidth: number;
 
 	constructor(config: IPopupConfig) {
 		super();
@@ -36,7 +36,7 @@ export class PopupInstance extends EventEmitter {
 			closeOnEscape: true,
 			lockBody: true,
 			animationDuration: ANIMATION_DURATION,
-			...config,
+			...config
 		};
 		this.isOpened = false;
 		this.overlayElement = null;
@@ -44,13 +44,14 @@ export class PopupInstance extends EventEmitter {
 		this.currentTrigger = null;
 		this.currentTriggerData = null;
 		this.escapeHandler = null;
-		this.scrollbarWidth = 0;
 
 		this.init();
 	}
 
 	public open(trigger?: HTMLElement): void {
-		if (this.isOpened) return;
+		if (this.isOpened) {
+			return;
+		}
 
 		this.currentTrigger = trigger || null;
 		this.saveTriggerData(trigger);
@@ -58,7 +59,7 @@ export class PopupInstance extends EventEmitter {
 		const eventData: IPopupEventData = {
 			popup: this,
 			trigger: this.currentTrigger,
-			triggerData: this.currentTriggerData,
+			triggerData: this.currentTriggerData
 		};
 
 		this.emit(EVENT_BEFORE_OPEN, eventData);
@@ -67,7 +68,7 @@ export class PopupInstance extends EventEmitter {
 		this.addOpenedClass();
 
 		if (this.config.lockBody) {
-			this.lockBody();
+			this.lockPage();
 		}
 
 		if (this.config.closeOnEscape) {
@@ -80,12 +81,14 @@ export class PopupInstance extends EventEmitter {
 	}
 
 	public close(): void {
-		if (!this.isOpened) return;
+		if (!this.isOpened) {
+			return;
+		}
 
 		const eventData: IPopupEventData = {
 			popup: this,
 			trigger: this.currentTrigger,
-			triggerData: this.currentTriggerData,
+			triggerData: this.currentTriggerData
 		};
 
 		this.emit(EVENT_BEFORE_CLOSE, eventData);
@@ -94,17 +97,20 @@ export class PopupInstance extends EventEmitter {
 		this.removeOpenedClass();
 
 		if (this.config.lockBody) {
-			this.unlockBody();
+			this.unlockPage();
 		}
 
 		if (this.escapeHandler) {
 			this.unbindEscapeHandler();
 		}
 
-		setTimeout(() => {
-			this.clearTriggerData();
-			this.emit(EVENT_CLOSE, eventData);
-		}, this.config.animationDuration);
+		setTimeout(
+			() => {
+				this.clearTriggerData();
+				this.emit(EVENT_CLOSE, eventData);
+			},
+			this.config.animationDuration
+		);
 	}
 
 	public isOpen(): boolean {
@@ -147,52 +153,38 @@ export class PopupInstance extends EventEmitter {
 	}
 
 	private findElements(): void {
-		this.overlayElement = this.element.querySelector(
-			`[${DATA_CLOSE_OVERLAY}]`,
-		);
-		this.closeButtons = Array.from(
-			this.element.querySelectorAll(`[${DATA_CLOSE_BUTTON}]`),
-		);
+		this.overlayElement = this.element.querySelector<HTMLElement>(`[${DATA_CLOSE_OVERLAY}]`);
+		this.closeButtons = [...this.element.querySelectorAll<HTMLElement>(`[${DATA_CLOSE_BUTTON}]`)];
 	}
 
 	private bindEvents(): void {
 		if (this.config.closeOnOverlay && this.overlayElement) {
-			this.overlayElement.addEventListener('click', (event) =>
-				this.handleOverlayClick(event),
-			);
+			this.overlayElement.addEventListener('click', this.handleOverlayClick);
 		}
 
 		this.closeButtons.forEach((button) => {
-			button.addEventListener('click', (event) =>
-				this.handleCloseButtonClick(event),
-			);
+			button.addEventListener('click', this.handleCloseButtonClick);
 		});
 	}
 
 	private unbindEvents(): void {
-		if (this.overlayElement) {
-			this.overlayElement.removeEventListener('click', (event) =>
-				this.handleOverlayClick(event),
-			);
-		}
+		this.overlayElement?.removeEventListener('click', this.handleOverlayClick);
 
 		this.closeButtons.forEach((button) => {
-			button.removeEventListener('click', (event) =>
-				this.handleCloseButtonClick(event),
-			);
+			button.removeEventListener('click', this.handleCloseButtonClick);
 		});
 	}
 
-	private handleOverlayClick(event: MouseEvent): void {
+	private handleOverlayClick = (event: MouseEvent): void => {
 		if (event.target === this.overlayElement) {
 			this.close();
 		}
-	}
+	};
 
-	private handleCloseButtonClick(event: MouseEvent): void {
+	private handleCloseButtonClick = (event: MouseEvent): void => {
 		event.preventDefault();
 		this.close();
-	}
+	};
 
 	private handleEscapeKey(event: KeyboardEvent): void {
 		if (event.key === ESCAPE_KEY) {
@@ -215,7 +207,8 @@ export class PopupInstance extends EventEmitter {
 	private saveTriggerData(trigger?: HTMLElement): void {
 		if (trigger) {
 			this.currentTriggerData = getDataAttributes(trigger, 'popup');
-		} else {
+		}
+		else {
 			this.currentTriggerData = null;
 		}
 	}
@@ -225,15 +218,12 @@ export class PopupInstance extends EventEmitter {
 		this.currentTriggerData = null;
 	}
 
-	private lockBody(): void {
-		this.scrollbarWidth = getScrollbarWidth();
-		document.body.style.paddingRight = `${this.scrollbarWidth}px`;
-		document.body.classList.add(BODY_LOCKED_CLASS);
+	private lockPage(): void {
+		document.documentElement.classList.add(BODY_LOCKED_CLASS);
 	}
 
-	private unlockBody(): void {
-		document.body.style.paddingRight = '';
-		document.body.classList.remove(BODY_LOCKED_CLASS);
+	private unlockPage(): void {
+		document.documentElement.classList.remove(BODY_LOCKED_CLASS);
 	}
 
 	private addOpenedClass(): void {
