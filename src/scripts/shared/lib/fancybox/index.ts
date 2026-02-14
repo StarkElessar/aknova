@@ -1,0 +1,1 @@
+export { FancyboxLoader } from './fancybox-loader';

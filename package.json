@@ -38,7 +38,7 @@
 		"vite-plugin-nunjucks": "^0.2.0"
 	},
 	"dependencies": {
-		"swiper": "^12.1.0"
+		"@fancyapps/ui": "^6.1.10",
 		"swiper": "^12.1.0",
 		"tippy.js": "^6.3.7"
 	},
