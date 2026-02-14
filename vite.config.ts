@@ -6,9 +6,9 @@ import nunjucksPlugin from 'vite-plugin-nunjucks';
 import accessories from './data/accessories.json';
 import common from './data/common.json';
 import faqAccordion from './data/faq-accordion.json';
+import ourOffers from './data/our-offers.json';
 import reviews from './data/reviews.json';
 import usefulArticles from './data/useful-articles.json';
-import ourOffers from './data/our-offers.json';
 
 export default defineConfig(({ command }) => {
 	const templatesDir = resolve(__dirname, 'src/shared');
