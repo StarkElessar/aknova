@@ -6,9 +6,11 @@ import { initReviewsSlider } from '@scripts/features/reviews-slider';
 import { initServicesSlider } from '@scripts/features/services-slider';
 import { initStockSlider } from '@scripts/features/stock-slider';
 import { initUsefulArticlesSlider } from '@scripts/features/useful-articles-slider';
+import { initOurOffersTabs } from '@scripts/features/our-offers-tabs';
 
 function initHomeScripts() {
 	initHeroSlider();
+	initOurOffersTabs();
 	initHowWeDoSlider();
 	initServicesSlider();
 	initUsefulArticlesSlider();

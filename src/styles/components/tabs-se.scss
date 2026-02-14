@@ -1,0 +1,53 @@
+@use "@styles/config/mixins" as *;
+
+.tabs-navigation {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(max-content, 1fr);
+	background-color: var(--color-grey-100);
+	border-radius: var(--radius-sm);
+	box-shadow: var(--shadow-default);
+	overflow: auto hidden;
+	min-width: 100%;
+	@include hide-scrollbar;
+
+	@media (width >= 640px) {
+		gap: 10px;
+		border-radius: var(--radius-lg);
+	}
+
+	&__item {
+		padding: 14px 20px;
+		border-radius: var(--radius-sm);
+		font-size: var(--heading-sm);
+		font-weight: 700;
+		white-space: nowrap;
+		transition: color var(--transition-default), background-color var(--transition-default);
+
+		@media (width >= 640px) {
+			font-size: var(--heading-lg);
+			border-radius: var(--radius-lg);
+		}
+
+		&:not(.active) {
+			color: var(--color-blue-900);
+			background-color: var(--color-grey-100);
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: color-mix(in srgb, var(--color-blue-900), transparent 95%);
+				}
+
+				&:active {
+					background-color: color-mix(in srgb, var(--color-blue-900), transparent 90%);
+				}
+			}
+		}
+
+		&.active {
+			background-color: var(--color-blue-900);
+			color: var(--color-grey-100);
+			cursor: auto;
+		}
+	}
+}

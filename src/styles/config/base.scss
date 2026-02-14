@@ -47,3 +47,24 @@
 		box-shadow: var(--shadow-default);
 	}
 }
+
+[data-tabs=item] {
+	&:not(.active) {
+		display: none;
+	}
+
+	&.active {
+		animation: fade-in .3s ease-in-out forwards;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
