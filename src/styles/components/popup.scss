@@ -13,9 +13,11 @@
 	opacity: 0;
 	transition-property: opacity, visibility;
 	transition-timing-function: ease-in-out;
-	transition-duration: .3s;
+	transition-duration: var(--popup-animation-duration, 0.3s);
+	display: none;
 
-	&.open {
+	&.popup_opened {
+		display: block;
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
@@ -42,6 +44,11 @@
 		overflow: hidden;
 		transition-property: opacity, transform;
 		transition-timing-function: ease-in-out;
-		transition-duration: .3s;
+		transition-duration: var(--popup-animation-duration, 0.3s);
 	}
 }
+
+.body-locked {
+	overflow: hidden;
+}
+
