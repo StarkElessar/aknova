@@ -1,0 +1,12 @@
+dist
+node_modules
+*.min.js
+*.min.css
+
+# Prettier is ONLY for HTML/CSS files
+# ESLint + Stylistic handles JS/TS formatting
+*.js
+*.mjs
+*.cjs
+*.ts
+*.tsx
