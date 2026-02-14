@@ -8,6 +8,7 @@
 		"build": "tsc && vite build",
 		"modx:build": "tsc && vite build --config vite.modx.config.ts",
 		"preview": "vite preview",
+		"deploy": "GITHUB_PAGES=true bun run build && gh-pages -d dist",
 		"lint": "eslint . && stylelint '**/*.css' && prettier --check '**/*.{html,css}'",
 		"lint:fix": "eslint . --fix && stylelint '**/*.css' --fix && prettier --write '**/*.{html,css,json,md}'"
 	},
@@ -19,6 +20,7 @@
 		"autoprefixer": "^10.4.24",
 		"eslint": "^9.39.2",
 		"eslint-plugin-simple-import-sort": "^12.1.1",
+		"gh-pages": "^6.2.0",
 		"glob": "^13.0.0",
 		"globals": "^17.2.0",
 		"postcss": "^8.5.6",
