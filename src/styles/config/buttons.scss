@@ -79,6 +79,7 @@
 
 	&_gradient {
 		background: var(--gradient-primary);
+		color: var(--color-grey-100);
 
 		&:not(:disabled) {
 			@media (any-hover: hover) {
