@@ -8,6 +8,7 @@ import { burgerMenuInit } from '@scripts/features/burger-menu-init';
 import { initGoTopButton } from '@scripts/features/go-top-button';
 import { initMaskInput } from '@scripts/features/mask-input.ts';
 import { initPopupTitleHandler } from '@scripts/features/popup-title-handler';
+import { initToggleHeader } from '@scripts/features/toggle-header';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initVarScrollbarWidth();
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initGoTopButton();
 	initPopups();
 	initPopupTitleHandler();
+	initToggleHeader();
 
 	formHandler({ formId: 'request-call-popup-form' });
 	initMaskInput();
