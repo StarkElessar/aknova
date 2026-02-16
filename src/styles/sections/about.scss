@@ -46,6 +46,7 @@
 		img {
 			display: block;
 			margin: 20px auto;
+			object-fit: contain;
 
 			@media (width >= 640px) {
 				margin-inline: 0;
