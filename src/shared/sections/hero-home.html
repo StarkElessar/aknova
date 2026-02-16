@@ -19,52 +19,19 @@
 		<div class="hero-home__rating">{% include "components/2-gis-rating.html" %}</div>
 
 		<div>
-			<p class="text-uppercase title title_lg text-white hero-home__sub-title">преимущества наших окон:</p>
+			<p class="text-uppercase title title_lg text-white hero-home__sub-title">Преимущества наших окон:</p>
 
 			<div class="swiper swiper-overflow hero-home__slider" id="hero-slider">
 				<div class="swiper-wrapper">
+					{% for advantage in heroAdvantages %}
 					<div class="swiper-slide">
 						<div class="hero-card">
-							<img src="{{ basePath }}/images/hero-home/01.png" alt="" class="hero-card__image" loading="lazy">
-							<div class="semi-bold text-blue text-md">Честный монтаж QR.</div>
-							<div class="text-md">Считываете QR-код на окне и смотрите скрытые работы</div>
+							<img src="{{ advantage.image }}" alt="" class="hero-card__image" loading="lazy">
+							<div class="semi-bold text-blue text-md">{{ advantage.title }}</div>
+							<div class="text-md">{{ advantage.description }}</div>
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="hero-card">
-							<img src="{{ basePath }}/images/hero-home/02.png" alt="" class="hero-card__image" />
-							<div class="semi-bold text-blue text-md">Гарантия на окна 10 лет!</div>
-							<div class="text-md">Сохраняется и наследующего собственника жилья</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="hero-card">
-							<img src="{{ basePath }}/images/hero-home/03.png" alt="" class="hero-card__image" />
-							<div class="semi-bold text-blue text-md">Окна с замкнутым армиром.</div>
-							<div class="text-md">В 2 раза прочнее обычного — безопасно и долговечно</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="hero-card">
-							<img src="{{ basePath }}/images/hero-home/04.png" alt="" class="hero-card__image" />
-							<div class="semi-bold text-blue text-md">Уплотнитель «Secil»</div>
-							<div class="text-md">На базе каучука EPDM, имеет камерную систему</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="hero-card">
-							<img src="{{ basePath }}/images/hero-home/05.png" alt="" class="hero-card__image" />
-							<div class="semi-bold text-blue text-md">Отлив с шумоизоляцией</div>
-							<div class="text-md">Наслаждайтесь тишиной и покоем</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="hero-card">
-							<img src="{{ basePath }}/images/hero-home/06.png" alt="" class="hero-card__image" />
-							<div class="semi-bold text-blue text-md">Ручки «Класс&nbsp;А»</div>
-							<div class="text-md">Стильный дизайн придаёт и&nbsp;минималистичный вид</div>
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 				<div class="swiper-scrollbar"></div>
 			</div>

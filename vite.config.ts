@@ -6,6 +6,7 @@ import nunjucksPlugin from 'vite-plugin-nunjucks';
 import accessories from './data/accessories.json';
 import common from './data/common.json';
 import faqAccordion from './data/faq-accordion.json';
+import heroAdvantages from './data/hero-advantages.json';
 import ourOffers from './data/our-offers.json';
 import reviews from './data/reviews.json';
 import usefulArticles from './data/useful-articles.json';
@@ -37,6 +38,7 @@ export default defineConfig(({ command }) => {
 	const processedAccessories = addBasePathToImages(accessories);
 	const processedUsefulArticles = addBasePathToImages(usefulArticles);
 	const processedReviews = addBasePathToImages(reviews);
+	const processedHeroAdvantages = addBasePathToImages(heroAdvantages);
 
 	const nunjucksPluginInstance = nunjucksPlugin({
 		templatesDir,
@@ -55,7 +57,8 @@ export default defineConfig(({ command }) => {
 				...processedUsefulArticles,
 				...processedReviews,
 				...processedAccessories,
-				...processedOurOffers
+				...processedOurOffers,
+				...processedHeroAdvantages
 			},
 			'about.html': {
 				basePath

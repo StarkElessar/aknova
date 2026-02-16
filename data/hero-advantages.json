@@ -1,0 +1,35 @@
+{
+	"heroAdvantages": [
+		{
+			"image": "/images/hero-home/01.png",
+			"title": "Честный монтаж QR.",
+			"description": "Считываете QR-код на окне и смотрите скрытые работы"
+		},
+		{
+			"image": "/images/hero-home/02.png",
+			"title": "Гарантия на окна 10 лет!",
+			"description": "Сохраняется и наследующего собственника жилья"
+		},
+		{
+			"image": "/images/hero-home/03.png",
+			"title": "Окна с замкнутым армиром.",
+			"description": "В 2 раза прочнее обычного — безопасно и долговечно"
+		},
+		{
+			"image": "/images/hero-home/04.png",
+			"title": "Уплотнитель «Secil»",
+			"description": "На базе каучука EPDM, имеет камерную систему"
+		},
+		{
+			"image": "/images/hero-home/05.png",
+			"title": "Отлив с шумоизоляцией",
+			"description": "Наслаждайтесь тишиной и покоем"
+		},
+		{
+			"image": "/images/hero-home/06.png",
+			"title": "Ручки «Класс А»",
+			"description": "Стильный дизайн придаёт и минималистичный вид"
+		}
+	]
+}
+
