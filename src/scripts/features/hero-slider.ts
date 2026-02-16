@@ -1,15 +1,17 @@
 import Swiper from 'swiper';
-import { Scrollbar } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
-export function initHeroSlider(selector: string = '#hero-slider') {
-	const swiperElement = document.querySelector(selector);
+export function initHeroSlider() {
+	const swiperElement = document.querySelector<HTMLElement>('#hero-slider');
+	const prevButton = document.querySelector<HTMLElement>('.hero-home__slider-nav [data-navigation=prev]');
+	const nextButton = document.querySelector<HTMLElement>('.hero-home__slider-nav [data-navigation=next]');
 
-	if (!swiperElement) {
+	if (!swiperElement || !prevButton || !nextButton) {
 		return null;
 	}
 
-	return new Swiper(selector, {
-		modules: [Scrollbar],
+	return new Swiper(swiperElement, {
+		modules: [Navigation],
 		spaceBetween: 20,
 		slidesPerView: 'auto',
 		grabCursor: true,
@@ -18,8 +20,9 @@ export function initHeroSlider(selector: string = '#hero-slider') {
 				spaceBetween: 32
 			}
 		},
-		scrollbar: {
-			el: '.swiper-scrollbar'
+		navigation: {
+			nextEl: nextButton,
+			prevEl: prevButton
 		}
 	});
 }
