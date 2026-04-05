@@ -1,6 +1,7 @@
 .call-request-cta {
 	&__wrapper {
 		display: grid;
+		grid-template-columns: 100%;
 		gap: 24px;
 		background: var(--gradient-blue);
 		border-radius: var(--radius-lg);
@@ -22,6 +23,8 @@
 		img {
 			display: block;
 			margin-inline: auto;
+			max-width: 100%;
+			object-fit: contain;
 
 			@media (width >= 960px) {
 				position: absolute;

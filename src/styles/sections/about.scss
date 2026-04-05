@@ -1,6 +1,11 @@
 .about {
-	&__container {
+	&__container,
+	&__content {
 		display: grid;
+		grid-template-columns: 100%;
+	}
+
+	&__container {
 		gap: 32px;
 
 		@media (width >= 960px) {
@@ -17,7 +22,6 @@
 	}
 
 	&__content {
-		display: grid;
 		gap: 24px;
 
 		@media (width >= 960px) {
